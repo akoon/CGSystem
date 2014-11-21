@@ -1,0 +1,80 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/group.js"></script>
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<a href="#" id="groupAdd" title="Add"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="groupDelete" title="Delete"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="groupUpdate" title="Edit"><img src="/static/ProjectManSys/img/edit.png" /></a>
+		
+	</div>
+	
+	<table id="group"></table>
+	
+	<!---------------------- 添加组窗口 ---------------------->
+	<div id="groupAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate">  
+	            		<td>Parent:</td> 
+	        			<td><input id="groupAddCombobox" name="groupAddCombobox" value=""></td>  
+	        		</tr>
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newName" class="groupName" name="" value=""></input></td>   
+	        		</tr>
+	        		<tr class="subordinate">  
+	            		<td>Project:</td> 
+	        			<td><input id="groupAddProjectCombobox" name="groupProjectCombobox" value=""></td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="newDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="groupAddOk" href="#">OK</a> 
+				<a id="groupAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+	
+	<!---------------------- 修改组窗口 ---------------------->
+	<div id="groupUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldName" class="groupName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate">  
+	            		<td>Project:</td> 
+	        			<td><input id="groupUpdateProjectCombobox" name="groupUpdateCombobox" value=""></td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="oldDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="groupUpdateOk" href="#">OK</a> 
+				<a id="groupUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

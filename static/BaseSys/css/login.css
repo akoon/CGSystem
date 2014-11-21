@@ -1,0 +1,400 @@
+body, table, input, button, textarea, select 
+{
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 12px;
+    color: #222;
+}
+
+html
+{
+	display: table;
+	display: -moz-box;
+	display: -webkit-box;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    display: table-cell;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.login_wrapper
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+
+div.form_wrapper
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    min-width: 600px;
+    text-align: center;
+}
+
+body.narrow div.form_wrapper
+{
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    padding: 0px;
+    min-width: 0px;	
+}
+
+div.login
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    width: 100%;
+}
+
+body.narrow div.login
+{
+	max-width: 300px;
+}
+
+div.logo_wrapper
+{
+    display: inline-block;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    text-align: left;
+}
+
+body.narrow div.logo_wrapper
+{
+    -webkit-box-align: start;
+    -moz-box-align: start;	
+}
+
+div.logo
+{
+    display: -webkit-box;
+    display: -moz-box;
+    width: 185px;
+    height: 33px;
+    background-image: url("../img/Pillars_logo.png");
+    background-repeat: no-repeat;
+    background-size: auto 33px;
+    -webkit-user-select: none;
+    vertical-align: top;
+}
+
+div.logo + img
+{
+    padding-top: 10px;
+    padding-right: 5px;
+}
+
+body.narrow div.logo + img
+{
+    padding-left: 5px;
+    padding-top: 5px;	
+}
+
+div#login_form
+{
+    display: inline-block;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.narrow div#login_form
+{
+    width: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;	
+}
+
+div.login_browser_msg
+{
+    padding: 10px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.3) inset;
+    color: rgb(200, 200, 200);
+    text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+div.login_browser_msg > h2:first-child
+{
+    margin: 0px;
+}
+
+div.login_browser_msg > p
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.login_browser_msg > p:last-child
+{
+    margin-bottom: 0px;
+}
+
+div.login_browser_msg a
+{
+    color: rgb(150, 150, 150);
+}
+
+div.build_no
+{
+    color: rgb(150, 150, 150);
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.field
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+div.field:last-child
+{
+    margin-bottom: 0px;
+}
+
+input
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 25px;
+    color: white;
+    font-size: 12px;
+    border: 0px;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.3) inset;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    padding: 5px;
+    margin: 0px;
+    -webkit-appearance: none; /* so box shadows will render on inputs on iDevices */
+    -webkit-transition: background-color 0.25s ease;
+    -moz-transition: background-color 0.25s ease;
+}
+
+input::-webkit-input-placeholder
+{
+    color: rgb(130, 130, 130);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+input:-moz-placeholder
+{
+    color: rgb(130, 130, 130);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+input:focus
+{
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+input[name=commit], #login_input_submit .btn
+{
+    display: block;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    width: 80px;
+    border: 0;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    color: #444;
+    background-color: rgb(180, 180, 180);
+    padding: 6px 12px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    vertical-align: text-top;
+    height: auto;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px -1px rgba(255, 255, 255, 0.8) inset;
+    -webkit-transition: background-color 0.25s ease;
+    -moz-transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+div.field input[name=commit]:hover,
+div.field input[name=commit]:focus,
+#login_input_submit .btn:hover,
+#login_input_submit .btn:focus
+{
+    background-color: rgb(210, 210, 210);
+}
+
+form
+{
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-align: stetch;
+    -moz-box-align: stretch;
+    margin-bottom: 0px;
+}
+
+div.field_name 
+{
+    color: rgb(251, 251, 251);
+    width: 125px;
+    margin-right: 15px;
+    text-align: right;
+    display: inline-block;
+    line-height: 25px;
+}
+
+div#flash_warning,
+div#flash_notice,
+div#flash_error
+{
+    background-color: rgba(191, 62, 60, 0.3);
+    color: white;
+    padding: 8px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.14)));
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+div#flash_notice
+{
+    background-color: rgba(62, 191, 60, 0.2);
+}
+
+body 
+{
+    background: #555;
+    background-image: url("../img/noise.png");
+    background-image: url("../img/noise.png"), -webkit-radial-gradient(50% 50%, circle cover, transparent, transparent, rgba(0, 0, 0, 0.3));
+    background-image: url("../img/noise.png"), -moz-radial-gradient(50% 50%, circle cover, transparent, transparent, rgba(0, 0, 0, 0.3));
+    background-image: url("../img/noise.png"), -o-radial-gradient(center, circle cover, transparent, transparent, rgba(0,0,0,0.3));
+    background-image: url("../img/noise.png"), -ms-radial-gradient(center, circle cover, transparent, transparent, rgba(0,0,0,0.3));
+    background-image: url("../img/noise.png"), radial-gradient(circle at center, transparent, transparent, rgba(0,0,0,0.3));
+}
+
+/* for smartphones */
+@media only screen and (max-device-width: 480px)
+{
+    div.login
+    {
+        max-width: 300px;
+    }
+
+    div.logo_wrapper
+    {
+        -webkit-box-align: start;
+        -moz-box-align: start;
+    }
+
+    div.logo + img
+    {
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    div.form_wrapper
+    {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        padding: 0px;
+        min-width: 0px;
+    }
+
+    div#login_form
+    {
+        width: auto;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    input
+    {
+        height: 30px;
+        font-size: 14px;
+    }
+
+    input[name=commit]
+    {
+        height: 30px;
+    }
+}
+    
+/* for retina devices */
+/*@media only screen and (-webkit-min-device-pixel-ratio:2)
+{
+    div.logo
+    {
+        background-image: url("../img/shotgun_logo@2x.png");
+    }
+}*/
+
+
+#error_msg_div {
+	padding: 13px 4px 0 0;
+}

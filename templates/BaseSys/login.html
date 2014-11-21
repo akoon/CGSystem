@@ -1,0 +1,58 @@
+﻿{% load i18n %} <!-- 登录界面 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">        
+        <meta name="pillars" content="">
+        
+        <title>{% trans "Pillars Matrix" %}</title>
+        
+<!--         <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> -->
+        <link href="/static/BaseSys/css/login.css" rel="Stylesheet" type="text/css">
+        
+       <!--  <script>
+			function reflow_page() {
+				if (document.body.clientWidth < 600)
+					document.body.className = 'narrow';
+				else
+					document.body.className = '';
+			};
+		</script> -->
+    </head>
+
+<!--   <body class="" onresize="reflow_page();" onload="reflow_page();"> -->
+  <body class="" >
+		<div class="login_wrapper">
+			<div class="login">
+				<div class="form_wrapper">
+					<div class="logo_wrapper">
+						<div class="logo"> </div>
+						<div id='error_msg_div' colspan="3" style="color:red;padding-bottom:5px;">
+							{{ errors }}
+						</div>
+					</div>
+					
+					<div id="login_form">
+						<form action="" method="post">							
+							<div class="field">
+								<input id="login_input_username" name="login_input_username" placeholder="login" type="text"/>								
+							</div>
+							
+							<div class="field">	
+								<input id="login_input_password" name="login_input_password" placeholder="password" type="password"/>								
+							</div>
+
+							<div id="login_input_submit" class="field" type="submit"/>
+								<button class="btn" type="submit">
+									{%trans "Sign In"%}
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="build_no">V 2.0.0</div>
+	</body>
+</html>

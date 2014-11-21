@@ -1,0 +1,85 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/types.js"></script>
+
+<div class="project project-content">
+	<div class="project_top_button">
+		<a href="#" id="typesAdd" title="添加"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="typesDelete" title="删除"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="typesUpdate" title="修改"><img src="/static/ProjectManSys/img/edit.png" /></a>
+		
+	</div>
+	
+	<table id="types"></table>
+	
+	<!---------------------- 类型添加窗口 ---------------------->
+	<div id="typesAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'"> 
+				<table>
+	            	<tr class="superior">  
+	            		<td>Type:</td> 
+	        			<td><select id="newType" class="easyui-combobox" name="newType">
+	        				<option value='-1' >project</option>
+	        				<option value='-2' >asset</option>
+	        				<option value='-3' >task</option>
+	        			</td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newName" class="typesName" name="" value=""></td>   
+	        		</tr>
+	        		<tr>
+	        			<td>Description:</td>
+	        			<td><textarea id="newDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="typesAddOk" href="#">Ok</a> 
+				<a id="typesAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+	
+	<!---------------------- 类型修改窗口 ---------------------->
+	<div id="typesUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+	            	<tr class="superior">  
+	            		<td>Type:</td> 
+	        			<td><select id="oldType" class="easyui-combobox" name="oldType">
+	        				<option value='-1' >project</option>
+	        				<option value='-2' >asset</option>
+	        				<option value='-3' >task</option>
+	        			</td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldName" class="typesName" name="" value=""></td>   
+	        		</tr>
+	        		<tr>
+	        			<td>Description:</td>
+	        			<td><textarea id="oldDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >
+				<a id="typesUpdateOk" href="#">Ok</a> 
+				<a id="typesUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div> 
+</div>
+
+{% endblock %}

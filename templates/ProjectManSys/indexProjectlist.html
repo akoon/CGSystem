@@ -1,0 +1,112 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/indexSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/indexProjectlist.js"></script>
+
+<div class="project-content">
+	<div class="project project_top_button" style="hieght:36px;">
+		{% if has_op %}  
+		<a href="#" id="projectAdd" title="Add"><img style="margin-top:10px;" src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="projectDelete" title="Delete"><img style="margin-top:10px;" src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="projectUpdate" title="Edit"><img style="margin-top:10px;" src="/static/ProjectManSys/img/edit.png" /></a>
+		<!-- <a href="#" id="projectRefresh" title="刷新"><img style="margin-top:10px;" src="/static/ProjectManSys/img/refresh.png" /></a> -->
+		{% endif %} 
+	</div>
+	
+	<table id="project"> </table>
+	
+	<!---------------------- 项目添加窗口 ---------------------->
+	<div id="projectAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newName" class="projectName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Type:</td>  
+	        			<td><input id="newType" class="projectType" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Status:</td>  
+	        			<td><input id="newStatus" class="projectStatus" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>User:</td>  
+	        			<td><input id="newUser" class="projectUser" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Start:</td>  
+	        			<td><input id="newStartTime" class="projectStartTime" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>End:</td>  
+	        			<td><input id="newEndTime" class="projectEndTime" name="" value=""></td>
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="newDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="projectAddOk" href="#">OK</a> 
+				<a id="projectAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+	
+	<!---------------------- 项目修改窗口 ---------------------->
+	<div id="projectUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+					<tr class="subordinate">
+	        			<td>Name:</td>  
+	        			<td><input id="oldName" class="projectName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Type:</td>  
+	        			<td><input id="oldType" class="projectType" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Status:</td>  
+	        			<td><input id="oldStatus" class="projectStatus" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>User:</td>  
+	        			<td><input id="oldUser" class="projectUser" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Start:</td>  
+	        			<td><input id="oldStartTime" class="projectStartTime" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>End:</td>  
+	        			<td><input id="oldEndTime" class="projectEndTime" name="" value=""></td>
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="oldDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>           
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   
+				<a id="projectUpdateOk" href="#">OK</a> 
+				<a id="projectUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div>
+
+</div>
+{% endblock %}

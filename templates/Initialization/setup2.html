@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pillars</title>
+<link rel="stylesheet" href="/static/Initialization/css/install.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/buttons.css?ver=3.7" type="text/css" />
+<script src="/static/extraneous/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/Initialization/js/initialization.js"></script>
+
+</head>
+<body class="wp-core-ui">
+<h1 id="logo"><a href="http://pillars.cc/">Pillars</a></h1>
+<form id="mailform" method="post" action="">
+	<p>请输入您的邮箱设置信息（该邮箱主要用于系统发送邮件使用）</p>
+	<p id="msg_mail" style="color: red;">{{EMAIL_ERROR}}</p>
+	<table class="form-table">
+		<tr>
+			<th scope="row"><label for="EMAIL_HOST">服务器*</label></th>
+			<td><input name="EMAIL_HOST" id="EMAIL_HOST" type="text" size="25" value="{{EMAIL_HOST}}" /></td>
+			<td>输入IP地址或邮箱域名</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="EMAIL_PORT">端口号*</label></th>
+			<td><input name="EMAIL_PORT" id="EMAIL_PORT" type="text" size="25" value="{{EMAIL_PORT}}" /></td>
+			<td>端口号，默认为 587 </td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="EMAIL_HOST_USER">用户名*</label></th>
+			<td><input name="EMAIL_HOST_USER" id="EMAIL_HOST_USER" type="text" size="25" value="{{EMAIL_HOST_USER}}" /></td>
+			<td>用于账户登录</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="EMAIL_HOST_PASSWORD">密码*</label></th>
+			<td><input name="EMAIL_HOST_PASSWORD" id="EMAIL_HOST_PASSWORD" autocomplete="off" type="password" size="25" value="{{EMAIL_HOST_PASSWORD}}" /></td>
+			<td>邮箱密码</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="dbhost">使用TLS*</label></th>
+			<td><input type="radio" name="EMAIL_USE_TLS" value="True" checked="checked"/>是<input type="radio" name="EMAIL_USE_TLS" value="False" />否  </td>
+			<td>是否需要使用TLS加密</td>
+		</tr>
+	</table>
+	<div style="float:left;padding-top: 16px;">
+		<a href="/Initialization/skip">跳过</a>
+	</div>
+	<p class="step"><input name="submit" type="submit" value="下一步" class="button button-large"/></p>
+</form>
+</body>
+</html>

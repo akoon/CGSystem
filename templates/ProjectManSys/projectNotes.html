@@ -1,0 +1,56 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<div class="project">
+    <h2 class="baseTitle">审核</h2>
+</div>
+
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="/static/ProjectManSys/js/projectNotes.js"></script>
+
+<div class="projectNote">
+    <div class="sider-bar">
+        <div id='taskgrid' class="sider-bar-inner">  
+             
+        </div>
+    </div>
+    
+    <div class="show-project-note">
+        <div class="overview">
+        	<div id="task-id" style="display: none;"></div>
+            <div class="overview-img"><span id="task-name" class="project-name"></span></div>
+            <div class="first-line">
+                <span class="leader">Leader<span id="leader" class="write-in"></span></span>
+                <span class="state">State<span id="state" class="write-in"></span></span>
+            </div>
+            
+            <div class="second-line">
+                <span class="start-time">Start Time<span id="start-time" class="write-in"></span></span>
+                <span class="end-time">End Time<span id="end-time" class="write-in"></span></span>
+            </div>
+            
+            <div class="third-line">
+                <div class="description">Description<span id="description" class="write-in"></span></div>
+            </div>
+        </div>  
+        
+        <div class="content">
+            <div class="chat-body">
+                <ul id ='chat-line' class="chat-line">
+                </ul>
+            </div>
+            <div class="reply-button">Reply</div>            
+        </div>          
+    
+        
+        <div class="left-messages">
+			<textarea id="note-content" name="note-content" style="width:100%"></textarea>
+        </div>     
+    </div>
+</div>
+
+{% endblock %}

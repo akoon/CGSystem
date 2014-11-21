@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Calendar - Pillars Matrix</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<!-- CSS styles -->
+		<link href="/static/extraneous/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/static/main_all.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/CalendarSys/css/main.css"/>
+
+		<!-- JS styles -->
+		<script src="/static/extraneous/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/static/extraneous/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/TimeSheetSys/js/public.js"></script>
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!-- 	加载外部css	 -->
+		<link rel="stylesheet" href="/static/extraneous/dataTables/css/jquery-ui-1.8.4.custom.css" type="text/css">
+
+		<!-- Sets up all Ext and Extensible includes: -->
+		<script type="text/javascript" src="/static/calendar/Extensible-config.js"></script>
+		
+		
+		
+		<!-- Page-specific includes -->
+		<script type="text/javascript" src="/static/calendar/App.js"></script>
+		<script type="text/javascript" src="/static/extjs/locale/ext-lang-zh_CN.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/calendar/test-app.css" />
+		
+		
+		
+	</head>
+
+	<body>
+		<!-- Navbar================================================== -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+
+					<!-- <a class="brand" href="/ProjectManSys">日历子系统</a> -->
+
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+
+							{% include 'include/first_menu.html' %}
+							<li class="">
+								<a href="/CalendarSys/">Index</a>
+							</li>
+						</ul>
+
+						{% include 'include/last_menu.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='' style="padding-top: 10px; padding-left: 8%; padding-right: 8%;">
+			{% block mainbox %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

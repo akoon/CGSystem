@@ -1,0 +1,82 @@
+{% extends "TimeSheetSys.html" %}
+{% block mainbox %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/TimeSheetSys/js/timesheet_users.js"></script>
+
+<h2 class="" style="margin-top:30px;"></h2>
+
+<table id="tsusers"></table>
+
+<a id="taskStatisticLnk" href="#" onClick="taskStatisticWinOpen()">Tasks Statistics</a>
+
+<!---------------------- 报表打印窗口 ---------------------->
+<div id="reportWin">
+	<div class="easyui-layout" data-options="fit:true">
+		<div  class="winForm" data-options="region:'center'"> 
+			<table>  
+				<tr class="superior">  
+            		<td>Start time:</td> 
+        			<td><input id="startdate" name="" value=""></td>
+        		</tr>
+        		<tr class="subordinate"> 
+        			<td>End time:</td>
+        			<td><input id="enddate" name="" value=""></td>
+        		</tr>
+        	</table>
+        </div> 
+		<div class="winButton" data-options="region:'south',border:false" >  
+			<a id="reportOk" href="#">Ok</a> 
+			<a id="reportCancel" href="#">Cancel</a> 
+		</div>
+	</div>
+</div>
+
+<!---------------------- 统计窗口 ---------------------->
+<div id="statisticWin">
+	<div class="easyui-layout" data-options="fit:true">
+		<div  class="winForm" data-options="region:'center'"> 
+			<table>  
+				<tr class="superior">  
+            		<td>Start time:</td> 
+        			<td><input id="statisticStart" name="" value=""></td>
+        		</tr>
+        		<tr class="subordinate"> 
+        			<td>End time:</td>
+        			<td><input id="statisticEnd" name="" value=""></td>
+        		</tr>
+        	</table>
+        </div> 
+		<div class="winButton" data-options="region:'south',border:false" >  
+			<a id="statisticOk" href="#">Ok</a> 
+			<a id="statisticCancel" href="#">Cancel</a> 
+		</div>
+	</div>
+</div>
+
+<!---------------------- 任务统计窗口 ---------------------->
+<div id="taskStatisticWin">
+	<div class="easyui-layout" data-options="fit:true">
+		<div  class="winForm" data-options="region:'center'"> 
+			<table>  
+				<tr class="superior">  
+            		<td>Start time:</td> 
+        			<td><input id="taskStatisticStart" name="" value=""></td>
+        		</tr>
+        		<tr class="subordinate"> 
+        			<td>End time:</td>
+        			<td><input id="taskStatisticEnd" name="" value=""></td>
+        		</tr>
+        	</table>
+        </div> 
+		<div class="winButton" data-options="region:'south',border:false" >  
+			<a id="taskStatisticOk" href="#">Ok</a> 
+			<a id="taskStatisticCancel" href="#">Cancel</a> 
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends "BaseSys.html" %}
+{% block mainbox %}
+
+{% include "BaseSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/kindeditor/themes/default/default.css" />
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/BaseSys/js/people.js"></script>
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<a href="#" id="peopleAdd" title="Add"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="peopleDelete" title="Delete"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="peopleUpdate" title="Edit"><img src="/static/ProjectManSys/img/edit.png" /></a>
+	</div>
+	
+	<table id="people"></table> 
+	
+	<!---------------------- 添加人员窗口 ---------------------->
+	<div id="peopleAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate"> 
+	        			<td>Username:</td>  
+	        			<td><input id="newUser" class="peopleUser" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newName" class="peopleName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Sex:</td>  
+	        			<td><input id="newSex" class="peopleSex" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate">  
+	            		<td>Tel:</td> 
+	        			<td><input id="newPhone" class="peoplePhone" name="" value=""></td>  
+	        		</tr>
+	            	<tr class="subordinate">  
+	            		<td>Email:</td> 
+	        			<td><input id="newEmail" class="peopleEmail" name="" value=""></td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Department:</td>  
+	        			<td><input id="newDepartment" class="peopleDepartment" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Position:</td>  
+	        			<td><input id="newPosition" class="peoplePosition" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Seat:</td>  
+	        			<td><input id="newSeatnumber" class="peopleSeatnumber" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>DOB:</td>  
+	        			<td><input id="newBirthday" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Blood Type:</td>  
+	        			<td><input id="newBloodType" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Constellation:</td>  
+	        			<td><input id="newConstellation" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Hobby:</td>  
+	        			<td><input id="newHobby" type="text" name=""></td>   
+	        		</tr>
+	        	</table>
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="peopleAddOk" href="#">Ok</a> 
+				<a id="peopleAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div> 
+	<!---------------------- 修改人员窗口 ---------------------->
+	<div id="peopleUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+					<tr class="subordinate"> 
+	        			<td>Username:</td>  
+	        			<td><input id="oldUser" class="peopleUser" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldName" class="peopleName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Sex:</td>  
+	        			<td><input id="oldSex" class="peopleSex" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate">  
+	            		<td>Tel:</td> 
+	        			<td><input id="oldPhone" class="peoplePhone" name="" value=""></td>  
+	        		</tr>
+	            	<tr class="subordinate">  
+	            		<td>Email:</td> 
+	        			<td><input id="oldEmail" class="peopleEmail" name="" value=""></td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Department:</td>  
+	        			<td><input id="oldDepartment" class="peopleDepartment" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Position:</td>  
+	        			<td><input id="oldPosition" class="peoplePosition" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Seat:</td>  
+	        			<td><input id="oldSeatnumber" class="peopleSeatnumber" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>DOB:</td>  
+	        			<td><input id="oldBirthday" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>BloodType:</td>  
+	        			<td><input id="oldBloodType" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Constellation:</td>  
+	        			<td><input id="oldConstellation" type="text" name=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Hobby:</td>  
+	        			<td><input id="oldHobby" type="text" name=""></td>   
+	        		</tr>
+	        	</table>           
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   
+				<a id="peopleUpdateOk" href="#">OK</a> 
+				<a id="peopleUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div> 
+	<!---------------------- 人员头像上传窗口 ---------------------->
+	<div id="peopleImgWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+					<tr class="subordinate"> 
+	    					<input type="file" name="peopleImage" id="peopleImage">  
+	        		</tr>
+	        	</table>           
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   			 
+				<a id="peopleImgOk" href="#">确认</a> 
+				<a id="peopleImgCancel" href="#">取消</a> 
+			</div>
+		</div>	
+	</div>	
+</div>
+
+{% endblock %}

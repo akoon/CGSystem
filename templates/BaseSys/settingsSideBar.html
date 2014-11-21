@@ -1,0 +1,50 @@
+<style>
+	.project-bar {
+		position: absolute;
+		width: 157;
+		height: 100%;
+		background-color: #cae8fb;
+		border-right:1px solid #bad0df;
+		font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑","STHeiti","MingLiu"
+		/*background: url('/static/BaseSys/img/bg_main.png')*/
+	}
+	.project-nav
+	{
+		width: 100%;
+	}
+	.project-nav ul{
+		text-align: left;
+		list-style-type: none;
+		margin: 0px;
+		
+	}
+	.project-nav li { 
+		padding: 13px;
+		padding-left: 20px;
+		border-bottom:1px solid #bad0df;
+		/*margin-left: 10px;*/
+	}
+
+</style>
+
+<!-- <a id="brand"  href="" style="display:none">{{request.session.projectName}}</a> -->
+
+
+<div class="project-bar"  style="position:fixed;top:40px;left:0px;right:0px;z-index:1020;">
+    <div class="project-nav" style="float:left">
+        <ul>
+      		<li id="peopleLnk">
+            	<a href="/BaseSys/people"><img src="/static/BaseSys/img/people.png" />&nbsp;&nbsp;&nbsp;&nbsp;Account</a>
+            </li>        
+            <li id="departmentLnk">
+            	<a href="/BaseSys/department"><img src="/static/BaseSys/img/department.png" />&nbsp;&nbsp;&nbsp;&nbsp;Department</a>
+            </li>
+            <li id="positionlLnk">
+            	<a href="/BaseSys/position"><img src="/static/BaseSys/img/position.png" />&nbsp;&nbsp;&nbsp;&nbsp;Position</a>
+            </li>
+        </ul>                   
+    </div>
+		
+</div>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectBar.js"></script>

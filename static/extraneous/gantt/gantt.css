@@ -1,0 +1,123 @@
+.taskTip strong
+{
+    font-weight:bold;
+    margin-right:5px;
+}
+
+.taskTip li
+{
+	padding-bottom:3px;
+}
+
+.icon-add
+{
+    background:url(images/add.png) no-repeat left center !important;
+}
+
+.Johnny
+{
+    background-color:LightGreen;
+}
+
+.Johnny .sch-gantt-progress-bar
+{
+    background-color:#555;
+}
+
+.Sencha .sch-gantt-label-left
+{
+    background:url(images/sencha.png) no-repeat left center !important;
+    padding-left:20px;
+    font-weight:bold;
+    text-decoration:underline;
+    color:navy;
+}
+
+.Sencha .sch-gantt-parenttask-bar
+{
+    background:#eee;
+}
+
+.Sencha .sch-gantt-progress-bar
+{
+    background:red;
+}
+
+.Bryntum .sch-gantt-label-left
+{
+    background:url(images/bryntum.jpg) no-repeat left center !important;
+    padding-left:20px;
+    font-weight:bold;
+    text-decoration:underline;
+    color:navy;
+}
+
+.Bryntum .sch-gantt-progress-bar
+{
+    background:lightblue;
+}
+
+.Bryntum .sch-gantt-parenttask-bar
+{
+    background:#eee;
+}
+
+
+
+.Sencha .x-tree-icon
+{
+    background:url(images/sencha.png) no-repeat left center !important;
+    color:navy;
+}
+
+.Bryntum .x-tree-icon
+{
+    background:url(images/bryntum.jpg) no-repeat left center !important;
+    color:navy;
+}
+
+/**-----------------------------------------------------------**/
+
+body {
+    padding: 0!important;
+}
+
+html,#panel-1091, #footer {
+    background-color: #7993a8;
+}
+
+#footer {
+    height: 280px;
+}
+
+.company {
+    padding: 40px 0 0 40px;
+}
+
+#header {
+    padding-top: 35px;
+}
+
+#logo a {
+    float: left;
+}
+
+#logo h1 {
+    padding-top: 10px;
+    font-size: 26px;
+}
+
+#logo h2 {
+    font-size: 20px;
+}
+
+.logout {
+    position: absolute;
+    top:5px;
+    right:20px;
+    color: #fff;
+}
+
+#panel-1091 {
+    height: 158px;
+}

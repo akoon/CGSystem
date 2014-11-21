@@ -1,0 +1,111 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/datagrid-groupview.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/projectTask.js"></script>
+
+<script src="/static/extraneous/uploadify/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/uploadify/uploadify.css">
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<input type="hidden" id="has_op" value="{{has_op}}" />
+		<!--<h2 class="baseTitle">Project task</h2>-->
+		{% if has_op %}
+		<a href="javascript:void(0)" id="projectTaskAdd" title="Add"><img src="/static/ProjectManSys/img/add_a.png" /></a>
+		<a href="javascript:void(0)" id="projectTaskDelete" title="Delete"><img src="/static/ProjectManSys/img/del_a.png" /></a>
+		<a href="javascript:void(0)" onClick="onEditBtClickRow();" title="Edit Task"><img src="/static/ProjectManSys/img/edit_a.png" /></a>
+		<a href="javascript:void(0)" id="taskImg" title="Upload Image"><img src="/static/ProjectManSys/img/thum_a.png" /></a>
+		<!-- <a href="javascript:void(0)" id="projectTaskReview" title="Audit"><img src="/static/ProjectManSys/img/review_a.png" /></a> -->
+		<!-- <a href="javascript:void(0)" id="editQC" title="QC"><img src="/static/ProjectManSys/img/qc_a.png" /></a> -->
+		{% endif %}
+		<a href="javascript:void(0)" onClick="onShowComment();" title="Comments"><img src="/static/ProjectManSys/img/comment_a.png" /></a>
+		<!--<a href="javascript:void(0)" onClick="onTaskIssueWinOpen()" title="发布任务"><img src="/static/ProjectManSys/img/comment_a.png" /></a>-->
+	</div>
+
+	<table id="projectTask"></table>
+
+	<!---------------------- 添加组窗口 ---------------------->
+	<div id="projectTaskAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					<tr class="subordinate">
+						<td>Belongs:</td>
+						<td>
+						<input id="projectTaskCom" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Name:</td>
+						<td>
+						<input id="newName" class="projectTaskName" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Description:</td>
+						<td>						<textarea id="newDesc" class="winTextarea" name="" value=""></textarea></td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="projectTaskAddOk" href="#">Ok</a>
+				<a id="projectTaskAddCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="taskReview" class="task-review" style = "display: none">
+		<input id="taskId" type="hidden" value="">
+		</input>
+		<div class="content">
+			<div id="chatCloseButton" onClick="chatWindowClose()" class="close-button">
+				X
+			</div>
+			<div class="chat-body">
+				<ul class="chat-line"></ul>
+			</div>
+
+			<div class="left-messages">
+				<div class="reply-button">
+					Reply
+				</div>
+				<textarea id="note-content" name="note-content" value="" style="width:100%"></textarea>
+			</div>
+		</div>
+	</div>
+	
+	<div id="mm" class="easyui-menu" style="width:120px;">
+		<div id="showNotes" data-options="iconCls:'icon-search'">Comments</div>
+	</div>
+	
+	<!---------------------- 任务发布窗口 ---------------------->
+	<div id="projectTaskIssueWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<span style="display: none" id="issueTaskSelected"></span>
+				
+				<form>
+					<div id="queue"></div>
+					<input id="file_upload" name="file_upload" type="file" multiple="true">
+				</form>
+				<script type="text/javascript">
+					
+				</script>
+			</div>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}

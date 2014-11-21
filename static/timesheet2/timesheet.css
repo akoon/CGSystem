@@ -1,0 +1,188 @@
+a {
+	text-decoration: none;
+}
+
+.timeSheetUi_0,
+.timeSheetUi_1,
+.timeSheetUi_2,
+.timeSheetUi_3,
+.timeSheetUi_7,
+.timeSheetUi_8 {
+	float: left;	
+	width: 45px;
+	height: 40px;
+	position: fixed;
+	margin-top: 37px;	
+}
+
+@-moz-document url-prefix() { 
+	.timeSheetUi_0,
+	.timeSheetUi_1,
+	.timeSheetUi_2,
+	.timeSheetUi_3,
+	.timeSheetUi_7,
+	.timeSheetUi_8 { margin-top: -14px; } 
+}
+
+.timeSheetUi_0 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -24px -4px;   /*编辑中*/
+}
+
+.timeSheetUi_1 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") 50px -4px;   /*审核者  001*/
+}
+
+.timeSheetUi_2 {	
+	background: url("../timesheet2/img/TimeSheet_Ui.png") 50px 81px;   /*审核者  002*/
+}
+
+.timeSheetUi_3 {	
+	background: url("../timesheet2/img/TimeSheet_Ui.png") 50px 41px;   /*审核者  003*/
+}
+
+.timeSheetUi_7 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -25px 45px;   /*不通过*/
+}
+
+.timeSheetUi_8 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -25px 83px;   /*审核完成*/
+}
+
+.timeSheetUi_4,
+.timeSheetUi_5,
+.timeSheetUi_6 {	
+	float: right;	
+	width: 20px;
+	height: 18px;
+	position: relative;
+	margin: 6px 7px 7px 0;
+	z-index: 100;
+}
+
+.timeSheetUi_4 {	
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -3px -24px;   /*审核者*/
+}
+
+.timeSheetUi_5 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -3px 21px;   /*提交*/
+}
+
+.timeSheetUi_6 {
+	background: url("../timesheet2/img/TimeSheet_Ui.png") -3px 61px;   /*已提交*/
+}
+
+.status {
+	float: left;
+	padding-top: 7px;
+	padding-left: 60px;
+	color: #b7b7b7;
+}
+
+#app-calendar-week-hd {
+	height: 63px!important;
+}
+
+.ext-cal-hd-ad-inner {
+	height: 61px!important;
+}
+
+@-moz-document url-prefix() { 
+	.ext-cal-bg-tbl {
+		height: 63px!important;
+	}		
+}
+
+.check-dropdown {
+	float: right;
+	text-align: left;
+	display: none;
+}
+
+.check-dropdown-menu {
+	height:100px;
+	min-width: 120px;
+	position: fixed;
+	padding: 4px 0;
+	margin: 86px 0 0 -84px;
+	list-style: none;
+	background-color: #838388;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	       -moz-background-clip: padding;
+	        background-clip: padding-box;
+	opacity: .96;
+	z-index: 1000;
+}
+
+@-moz-document url-prefix() {
+	.check-dropdown-menu { margin: 35px 0 0 -84px; }
+}
+
+.check-dropdown-menu a {	
+	padding: 3px 15px;
+	color: #fff;
+	font-weight: normal;
+	line-height: 18px;	
+	white-space: nowrap;
+	display: block;
+	clear: both;
+}
+
+.check-dropdown-menu li > a:hover, 
+.check-dropdown-menu .active > a, 
+.check-dropdown-menu .active > a:hover {
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #0088cc;
+}
+
+.check-dropdown-menu .divider {
+	height: 1px;
+	margin: 8px 1px;	
+	background-color: #4E6172;
+	border-bottom: 1px solid #C0C9D1;
+	overflow: hidden;
+}
+
+.check-dropdown-menu::after {
+	position: absolute;
+	top: -6px;
+	right: 20px;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #8b9fb2;
+	border-left: 6px solid transparent;
+	display: inline-block;
+	content: '';
+}
+
+.check-dropdown ul .tick_1,
+.check-dropdown ul .tick_2,
+.check-dropdown ul .tick_3 {
+	float: left;
+	width: 14px;
+	height: 14px;
+	margin: 2px 8px 0 0;
+}
+
+.check-dropdown ul .tick_1 {
+	background: url("../../../static/bootstrap/img/glyphicons-halflings-white.png") 180px 0px;     /*审核-通过 */
+}
+
+.check-dropdown ul .tick_2 {
+	background: url("../../../static/bootstrap/img/glyphicons-halflings-white.png") 157px 0px;    /*审核-不通过 */
+}
+
+.check-dropdown ul .tick_3 {
+	background: url("../../../static/bootstrap/img/glyphicons-halflings-white.png") 373px 87px;   /*审核-修改 */
+}
+	
+.ext-cal-dtitle {
+	vertical-align: top;
+}

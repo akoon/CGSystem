@@ -1,0 +1,81 @@
+{% extends "TimeSheetSys.html" %}
+{% block mainbox %}
+<link rel="stylesheet" type="text/css" href="/static/TimeSheetSys/css/index.css"/>
+<script type="text/javascript" src="/static/TimeSheetSys/js/index.js"></script>
+<div class="project">
+	<!--<h2 class="baseTitle">概览</h2>-->
+</div>
+<div class="row">
+	<div class="span1"></div>
+	<div class="span12">
+		<div class="sysitem">
+			<div class="page-header">
+	            <h1>Timeheet <small></small></h1>
+	        </div>
+	        <h3>Administrators</h3>
+	        <table id="superusers" class="table table-bordered table-striped">
+	            <thead>
+	            	<tr>
+	                	<th>Username</th>
+	                	<th>Name</th>
+	                	<th>Sex</th>
+	                	<th>Tel</th>
+	                	<th>Email</th>
+	                	<th>Department</th>
+	                	<th>Position</th>
+	             	</tr>
+	            </thead>
+	            <tbody>
+	            </tbody>
+	          </table>
+	          
+	          <h3>Tasks</h3>
+	          <div>
+	          <h4>Fixed tasks： <span id="fixtaskcount" class="badge badge-info">{{mission_count}}</span></h4>
+	          <table class="table table-bordered table-striped">
+	            <tbody>
+	            	<tr>
+	            		
+	          	{% for mission in mission_list %}
+	                <td>{{mission.name}} </td>
+				{% endfor %}
+	                	
+	             	</tr>
+	            </tbody>
+	          </table>
+	          
+	          <h4>Status list： <span id="statuscount" class="badge badge-info">{{status_count}}</span></h4>
+	          <table class="table table-bordered table-striped">
+	            <tbody>
+	            	<tr>
+	            		
+	          	{% for status in status_list %}
+	                <td>{{status.name}} </td>
+				{% endfor %}
+	                	
+	             	</tr>
+	            </tbody>
+	          </table>
+	          </div>
+	          
+        </div>
+        <!-- <div class="sysitem">
+			<div class="page-header">
+            <h1>系统环境 <small>数据库信息、 存储挂载目录</small></h1>
+        	</div>
+        	<h3>数据库信息</h3>
+        	<div>
+        		<h4>数据库用户名： <span id="databaseuser" class="badge badge-info"></span></h4>
+	          	<h4>数据库名字： <span id="databasename" class="badge badge-info"></span></h4>
+	          	<h4>数据库主机： <span id="databasehost" class="badge badge-info"></span></h4>
+	          	<h4>数据库端口： <span id="databaseport" class="badge badge-info"></span></h4>
+	        </div>
+	        <h3>服务器挂载目录</h3>
+	        <div>
+	        	<h4>挂载目录： <span id="mountdir" class="badge badge-info"></span></h4>
+	        </div>
+        </div> -->
+        <div class='contextbottom'></div>
+	</div>
+</div>
+{% endblock %}

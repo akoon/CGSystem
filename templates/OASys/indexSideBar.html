@@ -1,0 +1,56 @@
+<style>
+	.project-bar {
+		position: absolute;
+		/*width: 12%;*/
+		height: 100%;
+		background-color: #cae8fb;
+		border-right:1px solid #bad0df;
+		font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑","STHeiti","MingLiu"
+		/*background: url('/static/BaseSys/img/bg_main.png')*/
+	}
+	.project-nav
+	{
+		width: 100%;
+	}
+	.project-nav ul{
+		text-align: left;
+		list-style-type: none;
+		margin: 0px;
+	}
+	.project-nav li { 
+		padding: 11px;
+		padding-left: 20px;
+		border-bottom:1px solid #bad0df;
+		/*margin-left: 10px;*/
+	}
+	
+	.project-nav li a{
+		color: #465d6f;
+	}
+	
+	.project-nav .active a{
+		color: #0088CC;
+	}
+
+</style>
+
+<!-- <a id="brand"  href="" style="display:none">{{request.session.projectName}}</a> -->
+
+
+<div class="project-bar"  style="position:fixed;top:40px;left:0px;right:0px;z-index:1020;">
+    <div class="project-nav" style="float:left">
+        <ul>
+      		<li id="leaveLnk">
+            	<a href="/OASys/"><img src="/static/ProjectManSys/img/mytask.png" />&nbsp;&nbsp;&nbsp;&nbsp;请假管理</a>
+            </li>
+            
+            <li id="leaveArchiveLnk">
+            	<a href="/OASys/leaveArchive/"><img src="/static/ProjectManSys/img/mytask.png" />&nbsp;&nbsp;&nbsp;&nbsp;已归档</a>
+            </li>
+            
+        </ul>                   
+    </div>
+		
+</div>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectBar.js"></script>

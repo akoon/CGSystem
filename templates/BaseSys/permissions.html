@@ -1,0 +1,75 @@
+{% extends "BaseSys.html" %}
+{% block mainbox %}
+
+<div class="project">
+    <h2 class="baseTitle">权限管理</h2>
+</div>
+
+<script type="text/javascript" src="/static/BaseSys/js/permissions.js"></script>
+
+<div id="permissions" class="permissions">
+    <div class="user" >
+        <div id="permissionsImg" class="userImg"> </div>
+        <div class="userList"> </div>
+    </div>
+    
+    <div class="permissionsContent">
+        
+        <div class="moveButton_Warp">
+            <div class="moveButton_Inner">
+                <div class="moveButton">
+                    <div class="moveButton_left"></div>
+                    <div class="moveButton_right"></div>
+                </div>
+            </div>
+        </div>
+        
+        <table class="permissionsShow">
+            <thead>
+                <th class="permissionsList_title_A">
+                    <ul>
+                        <li>Description</li>
+                        <li>Description</li>
+                        <li>Description</li>
+                    </ul>
+                </th>
+                <th class="permissionsList_title_B">
+                    <ul>
+                        <li>Description</li>
+                        <li>Description</li>
+                        <li>Description</li>
+                    </ul>
+                </th>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="permissionsList_body_A">
+                    <ul>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                    </ul>
+                </td>
+                <td class="permissionsList_body_B">
+                    <ul>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                        <li>Description<span id="description" class="write-in"></span></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- <div class="permissionsShow">Description<span id="description" class="write-in"></span></div> -->
+        
+    </div>
+</div>
+
+
+{% endblock %}

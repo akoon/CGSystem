@@ -1,0 +1,107 @@
+{% extends "OASys.html" %}
+{% block mainbox %}
+
+{% include "OASys/indexSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/OASys/js/leave.js"></script>
+
+<script src="/static/extraneous/uploadify/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/uploadify/uploadify.css">
+
+<div class="project-content">
+	<div class="project project_top_button" style="hieght:36px;">
+		<a id="leaveAdd" title="新建假条"><img src="/static/ProjectManSys/img/add_a.png" /></a>
+		<a id="leaveEdit" title="修改假条"><img src="/static/ProjectManSys/img/edit_a.png" /></a>
+		<a id="leaveDestroy" title="删除假条"><img src="/static/ProjectManSys/img/del_a.png" /></a>
+		
+	</div>
+	
+	<table id="leaveTable"> </table>
+	
+	<!---------------------- 添加窗口 ---------------------->
+	<div id="leaveAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					
+					<tr class="subordinate">
+						<td>类型:</td>
+						<td><input id="newType" name="" value=""></input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>是由:</td>
+						<td><textarea id="newReason" class="winTextarea" name="" value=""></textarea></td>
+					</tr>
+					<tr class="subordinate">
+						<td>开始时间:</td>
+						<td><input id="newStartTime" class="projectTaskName" name="" value=""></input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>结束时间:</td>
+						<td><input id="newEndTime" class="projectTaskName" name="" value=""></input></td>
+					</tr>
+					
+					<tr class="subordinate">
+						<td>时长:</td>
+						<td>
+							<input id="newIntervalDay" style="width:80px;" name="" value="0"></input>天
+							<input id="newIntervalHour" style="width:80px;" name="" value="0"></input>小时
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="leaveAddOk" href="#">提交</a>
+				<a id="leaveAddCancel" href="#">取消</a>
+			</div>
+		</div>
+	</div>
+	
+	<!---------------------- 修改窗口 ---------------------->
+	<div id="leaveEditWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					
+					<tr class="subordinate">
+						<td>类型:</td>
+						<td><input id="oldType" name="" value=""></input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>是由:</td>
+						<td><textarea id="oldReason" class="winTextarea" name="" value=""></textarea></td>
+					</tr>
+					<tr class="subordinate">
+						<td>开始时间:</td>
+						<td><input id="oldStartTime" class="projectTaskName" name="" value=""></input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>结束时间:</td>
+						<td><input id="oldEndTime" class="projectTaskName" name="" value=""></input></td>
+					</tr>
+					
+					<tr class="subordinate">
+						<td>时长:</td>
+						<td>
+							<input id="oldIntervalDay" style="width:80px;" name="" value="0"></input>天
+							<input id="oldIntervalHour" style="width:80px;" name="" value="0"></input>小时
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="leaveEditOk" href="#">提交</a>
+				<a id="leaveEditCancel" href="#">取消</a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}

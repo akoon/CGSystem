@@ -1,0 +1,90 @@
+.icon-blank{
+	width: 0px;
+	height: 0px;
+	/*background:url('icons/blank.gif') no-repeat center center;*/
+}
+.icon-add{
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -407px -96px;
+}
+.icon-edit{
+	background: url("../../bootstrap/img/glyphicons-halflings.png") 1px -72px;
+}
+.icon-remove{
+	background: url("../../bootstrap/img/glyphicons-halflings.png") -432px -96px;
+}
+
+.icon-editQC {
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -96px -72px;
+}
+
+.icon-uploadImg {
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -144px -24px;
+}
+
+.icon-display-thumbnail{            
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -240px 0;
+}
+
+.icon-display-list{
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -264px 0;
+}
+
+.icon-chick{
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -143px -72px;
+}
+.icon-img{
+    background: url("../../bootstrap/img/glyphicons-halflings.png") -456px -48px;
+}
+
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+
+/*.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}*/

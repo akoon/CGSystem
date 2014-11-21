@@ -1,0 +1,12 @@
+.project-content{
+	/*width: 88%;*/
+    height: 100%;
+    float: right;
+}
+.top-toolbar
+{
+	position:absolute;
+	left:		500px;
+	top:		10px;
+	z-index:	1200;
+}

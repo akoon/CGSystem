@@ -1,0 +1,56 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/ProjectManSys/js/projectPeople.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+
+<!-- <div class="top-toolbar">
+	<a href="#" id="projectPeopleEdit">修改</a>
+</div> -->
+
+<div class="project-content">
+	<div class="project project_top_button">
+		{% if has_op %}
+		<a href="#" id="projectPeopleEdit" title="Project staff"><img src="/static/ProjectManSys/img/setting.png"/></a>
+	    {% endif %}
+	    <!--<h2 class="baseTitle">Staffs</h2>-->
+	</div>
+	<div id="projectPeopleTb">
+		<!--
+		<a href="#" id="projectPeopleAdd" class="easyui-linkbutton" iconCls="icon-add" plain="true"></a>
+		<span id="projectPeopleSelect">
+		<input class="easyui-combobox" id="projectPeopleAddCombo"></input>
+		</span> 
+		<a href="#" id="projectPeopleDelete" class="easyui-linkbutton" iconCls="icon-remove" plain="true"></a>
+		-->
+		<!--<a href="#" id="projectPeopleEdit" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></a>-->
+	</div>
+	
+	<table id="projectPeople"></table>
+	
+	<div id="dd" class="easyui-dialog" title="Staff" style="width:850px;height:600px;" data-options="buttons:'#bb',resizable:true,modal:true">
+	    <div class="easyui-layout" style="width:836px;height:525px;">
+	    	<div data-options="region:'center',title:'Outside Project'">
+	    		<table id="projpeopleout" class="easyui-datagrid" data-options="singleSelect:true">
+	    		</table>
+	    	</div>
+	    	<div data-options="region:'east',title:'Inside project',split:true" style="width:400px;">
+	    		<table id="projpeoplein" class="easyui-datagrid" data-options="singleSelect:true">
+	    		</table>
+	    	</div>
+	    </div>
+	</div>
+	<div id="bb">
+		<a id="projpeopleok" href="#" class="easyui-linkbutton">OK</a>
+		<a id="projpeoplecancle" href="#" class="easyui-linkbutton">Cancel</a>
+	</div>
+</div>
+
+{% endblock %}

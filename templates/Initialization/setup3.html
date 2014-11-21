@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pillars</title>
+<link rel="stylesheet" href="/static/Initialization/css/install.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/buttons.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/main.css" type="text/css" />
+<script src="/static/extraneous/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/Initialization/js/initialization.js"></script>
+</head>
+<body class="wp-core-ui">
+<h1 id="logo"><a href="http://pillars.cc/">Pillars</a></h1>
+<p>根据验证的Pillars ID 您可以使用以下应用。</p>
+<div class="row demo-tiles">
+	{% for app in apps %}
+        <div class="span3">
+          <div class="tile">
+            <img src="/static/BaseSys/img/{{app.img}}" alt="" class="tile-image big-illustration">
+            <h3 class="tile-title">{{app.name}}</h3>
+            <p>{{app.note}}</p>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+<form method="post" action="">
+	<p class="step"><input name="submit" type="submit" value="下一步" class="button button-large" /></p>
+</form>       
+</body>
+</html>

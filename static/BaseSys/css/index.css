@@ -1,0 +1,18 @@
+.body-scrollable {
+	overflow-y: scroll;
+}
+
+.page-header {
+    border-bottom: 1px solid #DDDDDD;
+    margin: 20px 0 30px;
+    padding-bottom: 9px;
+    color: #5A5A5A
+}
+
+.sysitem {
+	padding-top: 30px
+}
+
+.contextbottom {
+	margin-top: 30px;
+}

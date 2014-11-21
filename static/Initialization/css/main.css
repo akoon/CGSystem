@@ -1,0 +1,113 @@
+.row:before, .row:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row:before, .row:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+.demo-tiles {
+    margin-bottom: 46px;
+}
+
+.row {
+    margin-left: -20px;
+}
+
+.span3 {
+    width: 220px;
+    margin-top: 22px;
+}
+
+[class*="span"] {
+    float: left;
+    margin-left: 20px;
+    min-height: 1px;
+}
+
+.tile {
+    background-color: #ECF0F5;
+    border-radius: 6px 6px 6px 6px;
+    padding: 14px;
+    position: relative;
+    text-align: center;
+}
+
+.tile-image.big-illustration {
+    height: 111px;
+    margin-top: 20px;
+    width: 112px;
+}
+
+.tile-image {
+    height: 100px;
+    margin: 31px 0 27px;
+    vertical-align: bottom;
+}
+
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.tile-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+h3 {
+    font-size: 24.5px;
+}
+
+h1, h2, h3 {
+    line-height: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 10px 0;
+    text-rendering: optimizelegibility;
+}
+
+a {
+    color: #1ABC9C;
+    text-decoration: underline;
+    transition: all 0.25s ease 0s;
+}
+
+a {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+section {
+    padding-top: 30px;
+}
+
+section > .page-header, section > .lead {
+    color: #5A5A5A;
+}
+
+.page-header {
+    margin: 20px 0 30px;
+}

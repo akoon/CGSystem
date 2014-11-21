@@ -1,0 +1,75 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/templ.js"></script>
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<a href="#" id="templAdd" title="add"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="templDelete" title="delete"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="templUpdate" title="edit"><img src="/static/ProjectManSys/img/edit.png" /></a>
+		
+	</div>
+	
+	<table id="templ"></table>
+	
+	<!---------------------- 添加模板窗口 ---------------------->
+	<div id="templAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+	            	<tr class="superior">  
+	            		<td>Parent template:</td> 
+	        			<td><input id="parentNewCombobox" name="parentNewCombobox" value=""></td>
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>
+	        			<td><input id="newName" class="newName" name="" value=""></td>
+	        		</tr>
+	        		<tr>
+	        			<td>Description:</td>
+	        			<td><textarea id="newDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="templAddOk" href="#">Ok</a> 
+				<a id="templAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div> 
+	<!---------------------- 修改模板窗口 ---------------------->
+	<div id="templUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+	            	<tr class="superior">  
+	            		<td>Parent template:</td> 
+	        			<td><input id="parentOldCombobox" name="parentOldCombobox" value=""></td>
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>
+	        			<td><input id="oldName" class="positionName" name="" value=""></td>
+	        		</tr>
+	        		<tr>
+	        			<td>Desciption:</td>
+	        			<td><textarea id="oldDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   
+				<a id="templUpdateOk" href="#">Ok</a> 
+				<a id="templUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div>
+</div>
+{% endblock %}

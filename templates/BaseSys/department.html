@@ -1,0 +1,78 @@
+{% extends "BaseSys.html" %}
+{% block mainbox %}
+
+{% include "BaseSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/BaseSys/js/department.js"></script>
+
+<div class="project-content">
+	
+	<div class="project project_top_button">
+		<a href="#" id="departmentAdd" title="Add"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="departmentDelete" title="Delete"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="departmentUpdate" title="Edit"><img src="/static/ProjectManSys/img/edit.png" /></a>
+		
+	</div>
+	
+	<table id="department"></table> 
+	
+	<!---------------------- 添加部门窗口 ---------------------->
+	<div id="departmentAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+	            	<tr class="superior">  
+	            		<td>Superitor:</td> 
+	        			<td><input id="departmentAddCombobox" name="departmentAddCombobox" value=""></td>  
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newDepartment" class="positionName" name="" value=""></td>   
+	        		</tr>
+	        		<tr>
+	        			<td>Description:</td>
+	        			<td><textarea id="newDepartmentDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="departmentAddOk" href="#">OK</a> 
+				<a id="departmentAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div> 
+	<!---------------------- 修改部门窗口 ---------------------->
+	<div id="departmentUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+	            	<tr>  
+	            		<td>Superior:</td> 
+	        			<td><input id="departmentUpdateCombobox" name="departmentUpdateCombobox" value=""></td>  
+	        		</tr>
+	        		<tr> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldDepartment" class="positionName" name="" value=""></td>   
+	        		</tr>
+	        		<tr>
+	        			<td>Description:</td>
+	        			<td><textarea id="oldDepartmentDesc" class="winTextarea"></textarea></td>
+	        		</tr>
+	        	</table>           
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   
+				<a id="departmentUpdateOk" href="#">OK</a> 
+				<a id="departmentUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div> 
+</div>
+
+
+{% endblock %}

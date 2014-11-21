@@ -1,0 +1,1095 @@
+/****************************************
+ * By    Aaron
+ * Date  2013.5.8
+ * Time  11:33
+ ****************************************/
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	width: auto !important;
+	margin-right: 20px;
+	margin-left: 20px;
+	min-width: 940px;
+}
+
+body {
+	/*background: url("./ProjectManSys/img/main_bg.png") #eee;*/
+	overflow: hidden;
+}
+
+#content {
+	margin-top: 10px;
+	/*margin-left: 8%;
+	 margin-right: 8%;*/
+	background: #eee;
+	box-shadow: 0 0 60px rgba(0,0,0,.2);
+}
+
+.navbar-inner {
+	font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu"
+}
+
+.baseTitle {
+	position: relative;
+	padding: 8px 25px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.538em;
+	color: #fff;
+	text-shadow: 1px 1px 2px #555;
+	/*box-shadow: 0 3px 4px rgba(180,180,180,.8);*/
+	background: -webkit-gradient(linear,50% 100%,50% 0,color-stop(0%,rgba(255,255,255,.1)),color-stop(20%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,.3)));
+	background: -webkit-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+	background: -moz-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+	background: -o-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+	background: linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+	background-color: #96a9ba;
+}
+
+.baseTitle:after {
+	content: "";
+	position: absolute;
+	border: 1px dashed white;
+	top: 3px;
+	left: 3px;
+	right: 3px;
+	bottom: 3px;
+}
+
+.datagrid-wrap:before {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	/*background: url("./ProjectManSys/img/page_footer.png");*/
+	height: 24px;
+	width: 23px;
+}
+
+#tabsIndex:after, #gnt_table:after, .datagrid:after {
+	content: "";
+	width: 100%;
+	/*width: 84%;*/
+	height: 674px;
+	/*margin-left: 8%;
+	 margin-right: 8%;*/
+	position: absolute;
+	bottom: -45px;
+	/*bottom: 55px;*/
+	right: 0px;
+	/*background: url("./ProjectManSys/img/page_bottom.png");    */
+	z-index: -1;
+}
+
+#tabsIndex, #gnt_table, .datagrid {
+	position: relative;
+	overflow: visible !important;
+}
+
+#gnt_table {
+	width: auto !important;
+	z-index: 1;
+}
+
+.x-grid {
+	/*overflow: auto!important;*/
+}
+
+.x-box-layout-ct, .x-border-layout-c {
+	overflow: visible !important;
+}
+
+/*#ext-gen1078 {
+ height: 536px!important;
+ }*/
+
+#tabsIndex .tabs .tabs-title {
+	padding-right: 38px !important;
+}
+
+#tabsIndex .tabs li:last-child .tabs-title {
+	padding-right: 56px !important;
+}
+
+.tabs .tabs-p-tool {
+	height: 15px;
+	top: 13px;
+	/*right: -18px!important;*/
+}
+
+.tabs-p-tool a {
+	width: 15px !important;
+	height: 15px !important;
+	margin-right: 4px !important;
+	opacity: 1 !important;
+	vertical-align: top;
+}
+
+#projectTb {
+	display: block;
+}
+
+#departmentTb + .datagrid-view .datagrid-body {
+	overflow: hidden !important;
+}
+
+.datagrid-row-selected {
+	background: #6eb0d1 !important;
+}
+
+.tooltip {
+	opacity: 1;
+}
+
+.datagrid-group .arrow {
+	background: url('pillars/img/arrow.png') no-repeat -50px 0px;
+}
+
+.datagrid-group .tree-collapsed {
+	background: url('../static/extraneous/jqueryeasyui/themes/bootstrap/images/tree_icons.png') no-repeat 0px 0px;
+}
+
+.datagrid-group .datagrid-row-expand {
+	background: url('../static/extraneous/jqueryeasyui/themes/bootstrap/images/tree_icons.png') no-repeat 0px 0px;
+	/*background: url('images/datagrid_icons.png') no-repeat -32px center;*/
+}
+
+.datagrid-group .datagrid-row-collapse {
+	background: url('../static/extraneous/jqueryeasyui/themes/bootstrap/images/tree_icons.png') no-repeat -50px 0px;
+	/*background: url('images/datagrid_icons.png') no-repeat -48px center;*/
+}
+
+.datagrid-group .tree-expanded {
+	background: url('../static/extraneous/jqueryeasyui/themes/bootstrap/images/tree_icons.png') no-repeat -18px 0px;
+}
+
+#display {
+	float: right
+}
+
+.thum {
+	width: 40px !important;
+	height: 40px !important;
+	padding: 0 5px;
+}
+
+.projectNote {
+	overflow: auto;
+}
+
+.sider-bar {
+	float: left;
+	width: 20%;
+	/*height: 400px;    */
+	/*border: 1px solid #c5c5c5;*/
+	background: #eee;
+}
+
+.sider-bar-inner {
+	height: 98%;
+	margin: 10px 0 10px 10px;
+	border-top: 5px solid #c1bfbf;
+	/*border-right: 1px solid black;*/
+	background: #d3d1d1;
+	overflow: auto;
+}
+
+.show-project-note {
+	float: left;
+	width: 80%;
+}
+
+.content {
+	position: relative;
+	margin: 0 10px;
+	background: #d9d9d9;
+	border-top: 2px solid #e8e5e5;
+	/*overflow: auto;*/
+}
+
+.chat-body {
+	height: inherit;
+	overflow: auto;
+}
+
+.left-messages {
+	position: relative;
+	bottom: 0;
+	margin: 0 10px 10px 10px;
+}
+
+.write-in {
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 2px solid #adabab;
+	font-weight: normal;
+	color: #e8e5e5;
+}
+
+.datagrid-group {
+	border-bottom: 1px dashed #adabab;
+}
+
+.group-inner li {
+	border-top: 1px solid #bab8b8;
+	list-style: none;
+}
+
+.group-inner li:hover {
+	background: #bab8b8;
+}
+
+.group-inner li:active {
+	background: #6eb0d1 !important;
+}
+
+.reply-button {
+	position: absolute;
+	right: 27px;;
+	/*bottom: 0;*/
+	padding: 5px;
+	color: #777;
+	background: #bab8b8;
+	cursor: pointer;
+	/*opacity: .3;*/
+}
+
+.reply-button:hover {
+	opacity: .8;
+}
+
+.chat-line {
+	margin: 0;
+	padding: 0px 7px 10px 10px;
+}
+
+.chat-line li {
+	position: relative;
+	min-height: 40px;
+	padding-left: 8px;
+	border-left: 5px solid #c9c9c9;
+	border-bottom: 1px dashed #adabab;
+	list-style: none;
+}
+
+.chat-line li p {
+	margin: 0;
+}
+
+.chat-line li:nth-child(odd) {
+	border-left: 5px solid #b7b5b5;
+	background-color: #d3d1d1;
+}
+
+/* 高亮显示重要留言
+ ---------------------------*/
+.highlight {
+	border-left: 5px solid #51a9d6 !important;
+	background-color: #a2c4d3 !important;
+}
+
+.highlight .author {
+	color: #555;
+}
+
+/* 留言作者
+ ---------------------------*/
+.show-project-note .author {
+	position: absolute;
+	bottom: 0;
+	right: 20px;
+	color: #777;
+	font-size: .8em;
+}
+
+.author-name, .author-time {
+	margin-left: 6px;
+	padding-left: 6px;
+	border-left: 1px solid #adabab;
+	cursor: pointer;
+}
+
+.author-name:hover, .author-time:hover {
+	color: #2a618e;
+}
+
+.author-time {
+	margin-right: 30px;
+}
+
+/* 缩略图效果切换
+ ---------------------------*/
+.show_button {
+	float: right;
+	margin: 0 10px;
+}
+
+#layoutTarget .project-img {
+	background: #adbcc9;
+}
+
+#layoutTarget .project-name {
+	width: 166px;
+	margin-top: 126px;
+	font-size: 1.2em;
+	background: rgba(160 177 191 0.6);
+}
+
+.assets-sider-bar, .task-sider-bar {
+	float: left;
+	width: 260px;
+	/*height: 500px;*/
+	margin-left: 5px;
+	/*border-top: 30px solid #e2e2e2/*#c1bfbf*/;*/
+	/*background: #f4f2f2/*#d3d1d1*/;*/
+	overflow: auto;
+	padding-top: 0px;
+}
+
+.task-sider-bar {
+	float: right;
+	width: 400px;
+	height: auto;
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+.winButton, .panel.datagrid {
+	overflow: hidden !important;
+}
+
+.validatebox-invalid {
+	background-image: url("../static/extraneous/bootstrap/img/alert.png") !important;
+}
+
+.cl {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #34538b;
+	font-size: 0;
+}
+
+.cl.on {
+	background: #a0b3d6;
+}
+.cl.on:hover {
+	background: #486aaa;
+}
+
+.h {
+	height: 2px;
+	width: 12px;
+	background: white;
+	position: absolute;
+	margin-top: 5px;
+}
+
+.v {
+	width: 2px;
+	height: 12px;
+	background: white;
+	position: absolute;
+	margin-left: 5px;
+}
+
+.newview {
+	width: auto;
+	margin: 10px !important;
+	padding: 20px 0 0;
+	list-style-type: none;
+	overflow: auto;
+}
+
+.newview li {
+	margin: 5px 5px 5px 0;
+	padding: 5px;
+	border-bottom: 1px dashed #dddddd;
+	zoom: 1;
+}
+
+.newview li img {
+	width: 158px;
+	height: 148px;
+	padding: 3px;
+	background-color: /*white*/#F5F5F5;
+	border: 1px solid #beceeb;
+	float: left;
+}
+
+.newview li img:hover {
+	background: #e6e6e6;
+}
+
+.newview li p {
+	height: 160px;
+	margin: 0 0 0 215px;
+	color: #666666;
+}
+
+.newview li {/*width:210px;*/
+	float: left;
+	width: auto;
+	height: auto;
+	margin: 10px;
+}
+
+.newview li p {
+	height: auto;
+	margin: 6px 0;
+	text-align: center;
+}
+
+.newview li span {/*display:none;*/
+	width: auto;
+	height: auto;
+}
+
+/*body > div::selection, body > div div::selection {
+ background-color: rgb(130, 170, 170);
+ color: rgb(235, 235, 235);
+ }*/
+
+::-webkit-scrollbar {
+	width: 13px;
+	height: 13px;
+}
+
+::-webkit-scrollbar-corner {
+	background-image: url(resources/corner.png);
+	background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-corner:window-inactive {
+	background-image: url(resources/corner-inactive.png);
+}
+
+::-webkit-resizer {
+	background-image: url(resources/resizer.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+::-webkit-resizer:window-inactive {
+	background-image: url(resources/resizer-inactive.png);
+}
+
+::-webkit-scrollbar-track-piece:disabled {
+	display: none !important;
+}
+
+::-webkit-scrollbar-button:disabled {
+	display: none !important;
+}
+
+::-webkit-scrollbar-track:disabled {
+	margin: 6px;
+}
+
+/* Horizontal Scrollbar Styles */ /*应用于水平方向的滚动条*/
+
+::-webkit-scrollbar:horizontal {
+	-webkit-border-image: url(resources/horizontal-button.png) 0 2 0 2;
+	border-color: transparent;
+	border-width: 0 2px;
+	background-image: url(resources/horizontal-button-background.png);
+	background-repeat: repeat-x;
+}
+
+::-webkit-scrollbar:horizontal:corner-present {
+	border-right-width: 0;
+}
+
+::-webkit-scrollbar-track:horizontal:disabled:corner-present {
+	margin-right: 5px;
+}
+
+::-webkit-scrollbar:horizontal:window-inactive {
+	-webkit-border-image: url(resources/horizontal-button-inactive.png) 0 2 0 2;
+	background-image: url(resources/horizontal-button-background-inactive.png);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	/*background:#51A9D6;*/
+	-webkit-border-image: url(resources/horizontal-thumb.png) 0 13 0 13;
+	border-color: transparent;
+	border-width: 0 13px;
+	min-width: 20px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+	/*background:#51A9D6;*/
+	-webkit-border-image: url(resources/horizontal-thumb-hover.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-thumb:horizontal:active {
+	/*background:#51A9D6;*/
+	-webkit-border-image: url(resources/horizontal-thumb-active.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-thumb:horizontal:window-inactive {
+	/*background:#51A9D6;*/
+	-webkit-border-image: url(resources/horizontal-thumb-inactive.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:start:no-button, .double-end::-webkit-scrollbar-track-piece:horizontal:start, .none::-webkit-scrollbar-track-piece:horizontal:start {
+	margin-left: 6px;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:end:no-button, .double-start::-webkit-scrollbar-track-piece:horizontal:end, .none::-webkit-scrollbar-track-piece:horizontal:end {
+	margin-right: 6px;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:end:no-button:corner-present, .double-start::-webkit-scrollbar-track-piece:horizontal:end:corner-present, .none::-webkit-scrollbar-track-piece:horizontal:end:corner-present {
+	margin-right: 5px;
+}
+
+:not(.none):not(.double-end)::-webkit-scrollbar-track-piece:horizontal:start:single-button, :not(.none):not(.double-end)::-webkit-scrollbar-track-piece:horizontal:start:double-button, .single::-webkit-scrollbar-track-piece:horizontal:start, .double-start::-webkit-scrollbar-track-piece:horizontal:start, .double-both::-webkit-scrollbar-track-piece:horizontal:start {
+	margin-left: -6px;
+}
+
+:not(.none):not(.double-start)::-webkit-scrollbar-track-piece:horizontal:end:single-button, :not(.none):not(.double-start)::-webkit-scrollbar-track-piece:horizontal:end:double-button, .single::-webkit-scrollbar-track-piece:horizontal:end, .double-end::-webkit-scrollbar-track-piece:horizontal:end, .double-both::-webkit-scrollbar-track-piece:horizontal:end {
+	margin-right: -6px;
+}
+
+::-webkit-scrollbar-track:horizontal:disabled {
+	-webkit-border-image: url(resources/horizontal-track-disabled.png) 0 13 0 13;
+	border-color: transparent;
+	border-width: 0 13px;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:decrement {
+	-webkit-border-image: url(resources/horizontal-track.png) 0 13 0 13;
+	border-color: transparent;
+	border-width: 0 0 0 13px;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:decrement:hover {
+	-webkit-border-image: url(resources/horizontal-track-hover.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:decrement:active {
+	-webkit-border-image: url(resources/horizontal-track-active.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:increment {
+	-webkit-border-image: url(resources/horizontal-track.png) 0 13 0 13;
+	border-color: transparent;
+	border-width: 0 13px 0 0;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:increment:hover {
+	-webkit-border-image: url(resources/horizontal-track-hover.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-track-piece:horizontal:increment:active {
+	-webkit-border-image: url(resources/horizontal-track-active.png) 0 13 0 13;
+}
+
+::-webkit-scrollbar-button:horizontal {
+	width: 20px;
+	-webkit-border-image: url(resources/horizontal-button.png) 0 2 0 2;
+	border-color: transparent;
+	border-width: 0 2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+	background-image: url(resources/horizontal-decrement-arrow.png), url(resources/horizontal-button-background.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: 2px 3px, 0 0;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:hover {
+	-webkit-border-image: url(resources/horizontal-button-hover.png) 0 2 0 2;
+	background-image: url(resources/horizontal-decrement-arrow.png), url(resources/horizontal-button-background-hover.png);
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:active {
+	-webkit-border-image: url(resources/horizontal-button-active.png) 0 2 0 2;
+	background-image: url(resources/horizontal-decrement-arrow.png), url(resources/horizontal-button-background-active.png);
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:window-inactive {
+	-webkit-border-image: url(resources/horizontal-button-inactive.png) 0 2 0 2;
+	background-image: url(resources/horizontal-decrement-arrow.png), url(resources/horizontal-button-background-inactive.png);
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+	background-image: url(resources/horizontal-increment-arrow.png), url(resources/horizontal-button-background.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: 7px 3px, 0 0;
+}
+
+::-webkit-scrollbar-button:horizontal:increment:hover {
+	-webkit-border-image: url(resources/horizontal-button-hover.png) 0 2 0 2;
+	background-image: url(resources/horizontal-increment-arrow.png), url(resources/horizontal-button-background-hover.png);
+}
+
+::-webkit-scrollbar-button:horizontal:increment:active {
+	-webkit-border-image: url(resources/horizontal-button-active.png) 0 2 0 2;
+	background-image: url(resources/horizontal-increment-arrow.png), url(resources/horizontal-button-background-active.png);
+}
+
+::-webkit-scrollbar-button:horizontal:increment:window-inactive {
+	-webkit-border-image: url(resources/horizontal-button-inactive.png) 0 2 0 2;
+	background-image: url(resources/horizontal-increment-arrow.png), url(resources/horizontal-button-background-inactive.png);
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:horizontal:start:decrement, .double-start::-webkit-scrollbar-button:horizontal:start:decrement, .double-both::-webkit-scrollbar-button:horizontal:start:decrement {
+	width: 14px;
+	border-right-width: 0;
+	background-position: 2px 3px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:horizontal:start:increment, .double-start::-webkit-scrollbar-button:horizontal:start:increment, .double-both::-webkit-scrollbar-button:horizontal:start:increment {
+	background-position: 3px 3px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:horizontal:end:decrement, .double-end::-webkit-scrollbar-button:horizontal:end:decrement, .double-both::-webkit-scrollbar-button:horizontal:end:decrement {
+	background-position: 7px 3px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:horizontal:end:increment, .double-end::-webkit-scrollbar-button:horizontal:end:increment, .double-both::-webkit-scrollbar-button:horizontal:end:increment {
+	width: 14px;
+	border-left-width: 0;
+	background-position: 3px 3px, 0 0;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment:corner-present {
+	border-right-width: 0;
+	width: 19px;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:horizontal:end:increment:corner-present, .double-end::-webkit-scrollbar-button:horizontal:end:increment:corner-present, .double-both::-webkit-scrollbar-button:horizontal:end:increment:corner-present {
+	width: 13px;
+}
+
+/* Vertical Scrollbar Styles */
+
+::-webkit-scrollbar:vertical {
+	-webkit-border-image: url(resources/vertical-button.png) 2 0 2 0;
+	border-color: transparent;
+	border-width: 2px 0;
+	background-image: url(resources/vertical-button-background.png);
+	background-repeat: repeat-y;
+}
+
+::-webkit-scrollbar:vertical:corner-present {
+	border-bottom-width: 0;
+}
+
+::-webkit-scrollbar-track:vertical:disabled:corner-present {
+	margin-bottom: 5px;
+}
+
+::-webkit-scrollbar:vertical:window-inactive {
+	-webkit-border-image: url(resources/vertical-button-inactive.png) 2 0 2 0;
+	background-image: url(resources/vertical-button-background-inactive.png);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	background: #51A9D6;
+	-webkit-border-image: url(resources/vertical-thumb.png) 13 0 13 0;
+	border-color: transparent;
+	border-width: 13px 0;
+	min-height: 20px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+	background: #51A9D6;
+	-webkit-border-image: url(resources/vertical-thumb-hover.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+	background: #51A9D6;
+	-webkit-border-image: url(resources/vertical-thumb-active.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-thumb:vertical:window-inactive {
+	background: #51A9D6;
+	-webkit-border-image: url(resources/vertical-thumb-inactive.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:start:no-button, /*内层轨道，滚动条中间部分（除去）*/
+.double-end::-webkit-scrollbar-track-piece:vertical:start, .none::-webkit-scrollbar-track-piece:vertical:start {
+	margin-top: 6px;
+}
+
+::-webkit-scrollbar-track-piece:vertical:end:no-button, .double-start::-webkit-scrollbar-track-piece:vertical:end, .none::-webkit-scrollbar-track-piece:vertical:end {
+	margin-bottom: 6px;
+}
+
+::-webkit-scrollbar-track-piece:vertical:end:no-button:corner-present, .double-start::-webkit-scrollbar-track-piece:vertical:end:corner-present, .none::-webkit-scrollbar-track-piece:vertical:end:corner-present {
+	margin-bottom: 5px;
+}
+
+:not(.none):not(.double-end)::-webkit-scrollbar-track-piece:vertical:start:single-button, :not(.none):not(.double-end)::-webkit-scrollbar-track-piece:vertical:start:double-button, .single::-webkit-scrollbar-track-piece:vertical:start, .double-start::-webkit-scrollbar-track-piece:vertical:start, .double-both::-webkit-scrollbar-track-piece:vertical:start {
+	margin-top: -6px;
+}
+
+:not(.none):not(.double-start)::-webkit-scrollbar-track-piece:vertical:end:single-button, :not(.none):not(.double-start)::-webkit-scrollbar-track-piece:vertical:end:double-button, .single::-webkit-scrollbar-track-piece:vertical:end, .double-end::-webkit-scrollbar-track-piece:vertical:end, .double-both::-webkit-scrollbar-track-piece:vertical:end {
+	margin-bottom: -6px;
+}
+
+::-webkit-scrollbar-track:vertical:disabled {
+	-webkit-border-image: url(resources/vertical-track-disabled.png) 13 0 13 0;
+	border-color: transparent;
+	border-width: 13px 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:decrement {
+	-webkit-border-image: url(resources/vertical-track.png) 13 0 13 0;
+	border-color: transparent;
+	border-width: 13px 0 0 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:decrement:hover {
+	-webkit-border-image: url(resources/vertical-track-hover.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:decrement:active {
+	-webkit-border-image: url(resources/vertical-track-active.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:increment {
+	-webkit-border-image: url(resources/vertical-track.png) 13 0 13 0;
+	border-color: transparent;
+	border-width: 0 0 13px 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:increment:hover {
+	-webkit-border-image: url(resources/vertical-track-hover.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical:increment:active {
+	-webkit-border-image: url(resources/vertical-track-active.png) 13 0 13 0;
+}
+
+::-webkit-scrollbar-button:vertical {
+	height: 20px;
+	-webkit-border-image: url(resources/vertical-button.png) 2 0 2 0;
+	border-color: transparent;
+	border-width: 2px 0;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+	background-image: url(resources/vertical-decrement-arrow.png), url(resources/vertical-button-background.png);
+	background-repeat: no-repeat, repeat-y;
+	background-position: 3px 3px, 0 0;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:hover {
+	-webkit-border-image: url(resources/vertical-button-hover.png) 2 0 2 0;
+	background-image: url(resources/vertical-decrement-arrow.png), url(resources/vertical-button-background-hover.png);
+}
+
+::-webkit-scrollbar-button:vertical:decrement:active {
+	-webkit-border-image: url(resources/vertical-button-active.png) 2 0 2 0;
+	background-image: url(resources/vertical-decrement-arrow.png), url(resources/vertical-button-background-active.png);
+}
+
+::-webkit-scrollbar-button:vertical:decrement:window-inactive {
+	-webkit-border-image: url(resources/vertical-button-inactive.png) 2 0 2 0;
+	background-image: url(resources/vertical-decrement-arrow.png), url(resources/vertical-button-background-inactive.png);
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+	background-image: url(resources/vertical-increment-arrow.png), url(resources/vertical-button-background.png);
+	background-repeat: no-repeat, repeat-y;
+	background-position: 3px 8px, 0 0;
+}
+
+::-webkit-scrollbar-button:vertical:increment:hover {
+	-webkit-border-image: url(resources/vertical-button-hover.png) 2 0 2 0;
+	background-image: url(resources/vertical-increment-arrow.png), url(resources/vertical-button-background-hover.png);
+}
+
+::-webkit-scrollbar-button:vertical:increment:active {
+	-webkit-border-image: url(resources/vertical-button-active.png) 2 0 2 0;
+	background-image: url(resources/vertical-increment-arrow.png), url(resources/vertical-button-background-active.png);
+}
+
+::-webkit-scrollbar-button:vertical:increment:window-inactive {
+	-webkit-border-image: url(resources/vertical-button-inactive.png) 2 0 2 0;
+	background-image: url(resources/vertical-increment-arrow.png), url(resources/vertical-button-background-inactive.png);
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:vertical:start:decrement, .double-start::-webkit-scrollbar-button:vertical:start:decrement, .double-both::-webkit-scrollbar-button:vertical:start:decrement {
+	height: 14px;
+	border-bottom-width: 0;
+	background-position: 3px 3px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:vertical:start:increment, .double-start::-webkit-scrollbar-button:vertical:start:increment, .double-both::-webkit-scrollbar-button:vertical:start:increment {
+	background-position: 3px 4px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:vertical:end:decrement, .double-end::-webkit-scrollbar-button:vertical:end:decrement, .double-both::-webkit-scrollbar-button:vertical:end:decrement {
+	background-position: 3px 8px, 0 0;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:vertical:end:increment, .double-end::-webkit-scrollbar-button:vertical:end:increment, .double-both::-webkit-scrollbar-button:vertical:end:increment {
+	height: 14px;
+	border-top-width: 0;
+	background-position: 3px 4px, 0 0;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment:corner-present {
+	border-bottom-width: 0;
+	height: 19px;
+}
+
+:not(.single)::-webkit-scrollbar-button:double-button:vertical:end:increment:corner-present, .double-end::-webkit-scrollbar-button:vertical:end:increment:corner-present, .double-both::-webkit-scrollbar-button:vertical:end:increment:corner-present {
+	height: 13px;
+}
+
+/* Forced Scrollbar Mode Styles */
+
+.single::-webkit-scrollbar-button:start:decrement, .single::-webkit-scrollbar-button:end:increment {
+	display: block;
+}
+
+.single::-webkit-scrollbar-button:start:increment, .single::-webkit-scrollbar-button:end:decrement {
+	display: none;
+}
+
+.double-end::-webkit-scrollbar-button:start {
+	display: none;
+}
+
+.double-end::-webkit-scrollbar-button:end {
+	display: block;
+}
+
+.double-start::-webkit-scrollbar-button:start {
+	display: block;
+}
+
+.double-start::-webkit-scrollbar-button:end {
+	display: none;
+}
+
+.double-both::-webkit-scrollbar-button {
+	display: block;
+}
+
+.none::-webkit-scrollbar-button {
+	display: none;
+}
+
+.pe-thumbs li a div.pe-description {
+	width: 200px;
+	height: 100px;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0px;
+	left: -200px;
+	color: white;
+	display: none;
+	z-index: 1001;
+	text-align: left;
+}
+
+/*.....
+ Task-review........*/
+.task-review {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 405px;
+	min-height: 400px;
+	/*background: blue;*/
+}
+
+.task-review .content {
+	margin: 0;
+	border-top: 3px dashed #adabab;
+}
+
+.task-review .author {
+	margin-right: 10px;
+	color: #777;
+	font-size: .8em;
+	text-align: right;
+}
+
+.task-review .chat-body {
+	/*max-height: 520px;*/
+	min-height: 220px;
+	margin-top: 10px;
+	overflow: auto;
+}
+
+.task-review .left-messages {
+	width: 383px;
+	position: absolute;
+	bottom: 0;
+	margin: 10px 10px 0 10px;
+}
+
+.task-review .reply-button {
+	position: absolute;
+	top: -30px;
+	right: 10px;
+	padding: 5px;
+	color: #777;
+	background: #bab8b8;
+	cursor: pointer;
+	/*opacity: .3;*/
+}
+
+.task-review #note-content {
+	width: 366px !important;
+	height: 60px;
+}
+
+.task-review .close-button {
+	position: absolute;
+	/*right: 0px;*/
+	margin-left: -24px;
+	padding: 2px 8px;
+	color: #777;
+	background: #bab8b8;
+	cursor: pointer;
+	opacity: .8;
+}
+
+.task-review .close-button:hover {
+	color: #fff;
+	background: #51a9d6;
+}
+
+/* 权限页面
+ ----------------------------------------*/
+.user {
+	margin: 30px;
+}
+
+.userImg, .userList {
+	background: #0070A9;
+}
+
+.userImg {
+	float: left;
+	width: 200px;
+	height: 50px;
+	margin-right: 20px;
+}
+
+.userList {
+	width: 400px;
+	height: 50px;
+	overflow: auto;
+}
+
+.permissionsContent {
+	position: relative;
+}
+
+.permissionsShow {
+	width: 100%;
+	height: 85px;
+	line-height: 27px;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #777;
+	background: #bab8b8;
+}
+
+.permissionsList_body_A ul, .permissionsList_body_B ul {
+	padding: 0 100px;
+}
+
+.permissionsList_title_B, .permissionsList_body_B {
+
+	border-left: 5px solid #adabab;
+}
+
+.permissionsShow thead li {
+	float: left;
+	margin: 10px 20px;
+}
+
+.permissionsList_body_A ul li {
+	margin-left: 20px;
+}
+
+.moveButton_Warp {
+	position: absolute;
+	width: 100%;
+	display: table;
+}
+
+.moveButton_Inner {
+	position: static;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.moveButton {
+	/*width: 112px;*/
+	width: 192px;
+	margin: 0 auto;
+}
+
+.moveButton_left, .moveButton_right {
+	/*width: 50px;*/
+	width: 95px;
+	/*height: 100px;*/
+	height: 77px;
+	cursor: pointer;
+}
+
+.moveButton_left:hover {
+	background: #77a8c4 url("../static/ProjectManSys/img/LeftRight_Button.png");
+}
+
+.moveButton_right:hover {
+	background: #77a8c4 url("../static/ProjectManSys/img/LeftRight_Button.png") 93px 0;
+}
+
+.moveButton_left {
+	float: left;
+	margin-left: -6px;
+	/*border-bottom-left-radius: 50px;
+	 border-top-left-radius: 50px;*/
+	background: #adabab url("../static/ProjectManSys/img/LeftRight_Button.png");
+}
+
+.moveButton_right {
+	margin-left: 102px;
+	/*margin-left: 60px;*/
+	/*border-bottom-right-radius: 50px;
+	 border-top-right-radius: 50px;*/
+	background: #adabab url("../static/ProjectManSys/img/LeftRight_Button.png") 93px 0;
+}
+
+.otherButton {
+	float: right;
+}
+
+.tooltip-content input {
+	margin: -2px 15px 0 0;
+}
+
+.active {
+	background-color: #b1dbf9;
+}
+
+.project_top_button{
+	height: 46px;
+	border-bottom: 1px solid #bad0df;
+	cursor: pointer;
+}
+
+.project_top_button a{
+	margin-left:18px;
+}
+
+.project_top_button a img{
+	margin-top:10px;
+}

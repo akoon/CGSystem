@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pillars</title>
+<link rel="stylesheet" href="/static/Initialization/css/install.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/buttons.css?ver=3.7" type="text/css" />
+<script src="/static/extraneous/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/Initialization/js/initialization.js"></script>
+
+</head>
+<body class="wp-core-ui">
+<h1 id="logo"><a href="http://pillars.cc/">Pillars</a></h1>
+<form id="validateform" method="post" action="">
+	<p>首先请输入动量公司提供的Pillars ID信息及序列号，并保证服务器可以访问互联网，系统将进行联网验证。</p>
+	<table class="form-table">
+		<tr>
+			<th scope="row"><label for="pillars_id">Pillars ID*</label></th>
+			<td><input name="pillars_id" id="pillars_id" type="text" size="25" value="{{pillars_id}}" /></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="pillars_pwd">密码*</label></th>
+			<td><input name="pillars_pwd" id="pillars_pwd" type="password" autocomplete="off" size="25" value="{{pillars_pwd}}" /></td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="pillars_sn">序列号*</label></th>
+			<td><input name="pillars_sn" id="pillars_sn" type="text" size="25" value="{{pillars_sn}}" /></td>
+			<td></td>
+		</tr>
+	</table>
+	<p class="step"><input name="submit" type="submit" value="联网验证" class="button button-large" /></p>
+</form>
+</body>
+</html>

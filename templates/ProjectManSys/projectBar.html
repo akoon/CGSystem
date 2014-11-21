@@ -1,0 +1,78 @@
+<style>
+	.project-bar {
+		position: absolute;
+		/*width: 12%;*/
+		height: 100%;
+		background-color: #cae8fb;
+		border-right: 1px solid #bad0df;
+		font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu"
+		/*background: url('/static/BaseSys/img/bg_main.png')*/
+	}
+	.project-nav {
+		width: 100%;
+	}
+	.project-nav ul {
+		text-align: left;
+		list-style-type: none;
+		margin: 0px;
+	}
+	.project-nav li {
+		padding: 10px;
+		padding-left: 20px;
+		border-bottom: 1px solid #bad0df;
+		/*margin-left: 10px;*/
+	}
+	
+	.project-nav li a{
+		color: #465d6f;
+	}
+	
+	.project-nav .active a{
+		color: #0088CC;
+	}
+
+</style>
+
+<!-- <a id="brand"  href="" style="display:none">{{request.session.projectName}}</a> -->
+
+<div class="project-bar"  style="position:fixed;top:40px;left:0px;right:0px;z-index:1020;">
+	<div class="project-nav" style="float:left">
+		<ul>
+			<li id="projectTopLink" style="height: 26px;font-size: 20px;text-align: left;vertical-align:middle;color:#0088CC;">
+				{{request.session.projectName}}
+			</li>
+
+			<li id="projectIndexLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/"><img src="/static/ProjectManSys/img/index.png" style="width:22px; height:22px;" />&nbsp;&nbsp;&nbsp;&nbsp;Statistics</a>
+			</li>
+			<li id="projectGroupLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/group/"><img src="/static/ProjectManSys/img/group.png"  style="width:22px; height:22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;Assets</a>
+			</li>
+			<li id="projectTaskLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/task/"><img src="/static/ProjectManSys/img/task.png"  style="width:22px; height:22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;Tasks</a>
+			</li>
+			<li id="projectGanttLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/gantt/"><img src="/static/ProjectManSys/img/gantt.png"  style="width:22px; height:22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;Schedule</a>
+			</li>
+			<!-- <li>
+			<a href="/ProjectManSys/{{request.session.projectId}}/notes/">审核</a>
+			</li> -->
+			<li id="projectPeopleLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/people/"><img src="/static/ProjectManSys/img/people.png"  style="width:22px; height:22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;Staff</a>
+			</li>
+			
+			<li id="projectPerformanceLnk" style="display: none;">
+				<a href="/ProjectManSys/{{request.session.projectId}}/performance/"><img src="/static/ProjectManSys/img/people.png"  style="width:22px; height:22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;Performance</a>
+			</li>
+			<!-- <li id="projectRelLnk">
+				<a href="/ProjectManSys/{{request.session.projectId}}/rel/"><img src="/static/ProjectManSys/img/rel.png" />&nbsp;&nbsp;&nbsp;&nbsp;关联</a>
+			</li> -->
+			<li style="display: none">
+				<span id="projectId">{{request.session.projectId}}</span>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectBar.js"></script>

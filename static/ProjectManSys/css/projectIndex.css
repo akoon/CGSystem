@@ -1,0 +1,92 @@
+.base-div {
+	margin: 10px;
+	background: #d3d1d1;
+    border-top: 5px solid #c1bfbf;
+    border-bottom: 1px solid #a09f9f;
+}
+
+.overview {
+    min-height: 200px;
+    width: 70%;
+    float: left;
+}
+
+.project-summary {
+    height: 400px;
+    width: 27%;
+    float: right;
+}
+
+.overview-img {
+    float: left;
+    width: 190px;
+    height: 190px;
+    margin: 0 10px 10px 10px;
+    background: url("../static/BaseSys/img/main_bg.png") #bab8b8;    
+}
+
+.project-name {
+    position: absolute;
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 160px;
+    color: #f4f2f2;
+    text-align: center;
+    background: #adabab;   
+    display: block;   
+    z-index: 1;
+}
+
+.overview-img img {
+    position: absolute;
+    height: 190px;
+    width: 190px;
+}
+
+.info {
+    display: inline-block;
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0 10px 10px;
+    padding-left: 10px;
+    /*color: #e8e5e5;*/
+   font-weight: bold;
+    color: #777;    
+    border-left: 5px solid #adabab;    
+    background: #bab8b8;
+}
+
+.start-time,
+.end-time {
+    height: 25px;
+    line-height: 25px;
+}
+
+.description {
+    display: inherit;
+    width: auto;
+    height: 85px;
+    line-height: 27px;
+    margin: 10px 10px 10px 220px;   
+    overflow: auto; 
+}
+
+#project-userinfo {
+	width: 70%;
+    height: 450px;
+    float: left;
+}
+
+.table-div {
+	width: 200px;
+    height: 450px;
+    float: left;
+}
+
+.user-summary{
+	width: 400px;
+    height: 450px;
+    float: left;
+}

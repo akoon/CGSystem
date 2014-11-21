@@ -1,0 +1,186 @@
+/*
+ * By dingchun 
+ *    2013.3.11
+ */
+
+.navbar-inverse .navbar-inner{
+	
+}
+
+.navbar {
+    /*box-shadow: 0 4px 6px rgba(0,0,0,0.2);*/
+}
+
+.navbar-inverse .brand {
+	font-weight: bold;
+}
+
+.navbar-fixed-top {
+	position: fixed;
+}
+
+.navbar-innernavbar-inner .brand {
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	margin-left: -20px;
+}
+
+.navbar .nav>li>a {
+	padding: 10px 12px 10px;
+}
+
+#content {
+    margin-top: 10px;
+    /*margin-left: 0.1%;*/ 
+    /*margin-right: 0.1%;*/
+    background:#eee;
+    box-shadow: 0 0 60px rgba(0,0,0,.2);
+}
+
+#content .icon-add,
+#content .icon-remove,
+#content .icon-refresh {
+    display: inline-block;
+    vertical-align: baseline;
+    height: 16px;
+    line-height: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.trBgColor {
+	background: blue;
+}
+
+/*Test*/
+.winButton{
+	text-align:right;
+	padding:5px 5px 10px;
+}
+
+.winForm{
+	padding:15px 0px 10px 10px;
+}
+
+.winTextarea{
+	width: 196px;
+	resize: none;
+}
+
+.datagrid-btable span,
+.datagrid-btable div,
+.datagrid-htable span {
+    font-size: 14px;
+}
+
+.baseTitle {   
+    padding: 8px 25px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.538em;
+    color: #fff;
+    position: relative;
+    text-shadow: 1px 1px 2px #555;
+    box-shadow: 0 3px 4px rgba(180,180,180,.8);
+    background: -webkit-gradient(linear,50% 100%,50% 0,color-stop(0%,rgba(255,255,255,.1)),color-stop(20%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,.3)));
+    background: -webkit-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+    background: -moz-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+    background: -o-linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+    background: linear-gradient(bottom,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 20%,rgba(255,255,255,.3) 100%);
+    background-color: #96a9ba;
+}
+
+.baseTitle:after {
+    content: "";
+    position: absolute;
+    border: 1px dashed white;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+}
+
+.subordinate {
+    padding-top: 10px;
+    /*line-height: 40px;*/
+}
+
+#departmentAddWin .winButton,
+#departmentUpdateWin .winButton {
+    height: auto!important;
+}
+
+.project{
+    padding-top: 20px;
+}
+
+#content .navbar+.project{
+    padding-top: 85px;
+}
+
+.panel .messager-body {
+    /*height:18px!important;*/
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+
+.panel .panel-body {
+/*    background-color: transparent;*/
+/*    background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 255, 255, 0.1), to(rgba(255, 255, 255, 0.5)));*/
+}
+
+.datagrid-row td:last-child {
+    padding-right: 100px!important;
+    border-width: 0 0px 1px 0;    
+}
+
+.datagrid-header-row td:last-child .datagrid-cell {
+    margin-right: 100px;
+}
+
+.datagrid-header-row td {
+    border-top: 1px solid rgb(212, 212, 212)!important;
+}
+
+.datagrid-btable {
+    overflow: hidden;
+}
+
+.datagrid-cell {
+    width: 42px;
+}
+
+.datagrid-wrap:before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    background: url('../im/store-s9c1c6e80a6.png') 0 -329px;
+    height: 24px;
+    width: 23px;
+}
+
+.selectTable {
+	background-color: #6EB0D1;
+}
+
+.body-scrollable {
+	overflow-y: scroll;
+}
+
+/*thead {
+    display: block;
+}
+
+tbody {
+	overflow: auto;
+    display: block;
+}*/
+
+.add-on {
+    text-align: left!important;
+    width: 120px!important;
+}

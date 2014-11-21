@@ -1,0 +1,135 @@
+/****************************************
+ * By    Aaron 
+ * Date  2013.3.11
+ * Time  10:00
+ ****************************************/
+
+.navbar-inverse .navbar-inner{
+	
+}
+
+.navbar {
+    /*box-shadow: 0 4px 6px rgba(0,0,0,0.2);*/
+}
+
+.navbar-inverse .brand {
+	font-weight: bold;
+}
+
+.navbar-fixed-top {
+	position: fixed;
+}
+
+.navbar-innernavbar-inner .brand {
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	margin-left: -20px;
+}
+
+.navbar .nav>li>a {
+	padding: 10px 12px 10px;
+}
+
+#content .icon-add,
+#content .icon-remove,
+#content .icon-refresh {
+    display: inline-block;
+    vertical-align: baseline;
+    height: 16px;
+    line-height: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.trBgColor {
+	background: blue;
+}
+
+/*Test*/
+.winButton{
+	text-align:right;
+	padding:5px 5px 10px;
+}
+
+.winForm{
+	padding:15px 0px 10px 10px;
+}
+
+.winTextarea{
+	width: 196px;
+	resize: none;
+}
+
+.datagrid-btable span,
+.datagrid-btable div,
+.datagrid-htable span {
+    font-size: 14px;
+}
+
+.subordinate {
+    padding-top: 10px;
+    /*line-height: 40px;*/
+}
+
+#departmentAddWin .winButton,
+#departmentUpdateWin .winButton {
+    height: auto!important;
+}
+
+.project{
+    padding-top: 31px;
+}
+
+#content .navbar+.project{
+    padding-top: 85px;
+}
+
+.panel .messager-body {
+    /*height:18px!important;*/
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+
+.panel .panel-body {
+/*    background-color: transparent;*/
+/*    background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 255, 255, 0.1), to(rgba(255, 255, 255, 0.5)));*/
+}
+
+.datagrid-row td:last-child {
+    padding-right: 100px!important;
+    border-width: 0 0px 1px 0;    
+}
+
+.datagrid-header-row td:last-child .datagrid-cell {
+    margin-right: 100px;
+}
+
+.datagrid-header-row td {
+    border-top: 1px solid rgb(212, 212, 212)!important;
+}
+
+.datagrid-btable {
+    overflow: hidden;
+}
+
+.datagrid-cell {
+    width: 42px;
+}
+
+.datagrid-wrap:before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    background: url('../im/store-s9c1c6e80a6.png') 0 -329px;
+    height: 24px;
+    width: 23px;
+}
+
+
+.project-content{
+    float: left;
+    padding-top: 30px;
+}

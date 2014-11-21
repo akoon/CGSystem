@@ -1,0 +1,250 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+
+<style>
+	#groupTree li div {
+		margin-left: 15px;
+		border-bottom: 1px solid #e7e7e7;
+		box-shadow: 0px 1px 0px #fff;
+		height: 35px;
+	}
+	#groupTree .tree-title {
+		display: inline-block;
+		font-size: 15px;
+		height: 35px;
+		line-height: 35px;
+		padding: 0 2px;
+		text-decoration: none;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+</style>
+
+<!-- <div class="top-toolbar">
+<a href="#" id="projectGroupAdd">Add</a>
+<a href="#" id="projectGroupDelete">Delete</a>
+<a href="#" id="projectGroupUpdate">Update</a>
+</div> -->
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<div style="width: 265px;float: left;border-right: 1px solid #CCCCCC;height: 46px;">
+
+			{% if has_op %}
+			<a href="#" id="groupAdd" title="Add Group"><img src="/static/ProjectManSys/img/add.png" /></a>
+			<a href="#" id="groupDelete" title="Delete Group"><img src="/static/ProjectManSys/img/del.png" /></a>
+			<a href="#" id="groupUpdate" title="Edit Group"><img src="/static/ProjectManSys/img/edit.png" /></a>
+			{% endif %}
+		</div>
+		<div style="float: left;">
+			{% if has_op %}
+			<a href="#" id="projectGroupAdd" title="Add Asset"><img src="/static/ProjectManSys/img/add.png" /></a>
+			<a href="#" id="projectGroupDelete" title="Delete Asset"><img src="/static/ProjectManSys/img/del.png" /></a>
+			<a href="#" id="projectGroupUpdate" title="Edit Asset"><img src="/static/ProjectManSys/img/edit.png" /></a>
+			{% endif %}
+		<a href="#" id="display" class="easyui-linkbutton" iconCls="icon-display-list" plain="true" title="视图" style="display:none;"></a>
+		</div>
+	</div>
+	<div class="assets-sider-bar">
+		<div style='color:#465D6F;height: 25px;border-bottom:1px solid #CCCCCC;text-align: center;font-family: "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑","STHeiti","MingLiu";'>
+			Taskgroup
+		</div>
+		<ul id="groupTree"></ul>
+	</div>
+	<table id="projectGroup"></table>
+
+	<!---------------------- 添加资产窗口 ---------------------->
+	<div id="projectGroupAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					<tr class="superior">
+						<td>Group:</td>
+						<td>
+						<input id="newGroup" name="GroupCombo" value="">
+						</td>
+					</tr>
+					<tr class="subordinate">
+						<td>Name:</td>
+						<td>
+						<input id="newName" class="NameInput" name="" value="">
+						</td>
+					</tr>
+					<tr class="subordinate">
+						<td>Chinese Name:</td>
+						<td>
+						<input id="newNameDesc" class="NameDescInput" name="" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Type:</td>
+						<td>
+						<input id="newTypes" name="TypesCombo" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Status:</td>
+						<td>
+						<input id="newStatus" name="StatusCombo" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Template:</td>
+						<td>
+						<input id="newTempl" name="TemplCombo" value="">
+						</td>
+					</tr>
+					<tr>
+						<td>Description:</td>
+						<td><textarea id="newDesc" class="winTextarea"></textarea>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false" >
+				<a id="projectGroupAddOk" href="#">OK</a>
+				<a id="projectGroupAddCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+	<!---------------------- 修改资产窗口 ---------------------->
+	<div id="projectGroupUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">
+				<table>
+					<tr class="subordinate">
+						<td>Name:</td>
+						<td>
+						<input id="oldName" class="NameInput" name="" value="">
+						</td>
+					</tr>
+					<tr class="subordinate">
+						<td>Chinese Name:</td>
+						<td>
+						<input id="oldNameDesc" class="NameDescInput" name="" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Type:</td>
+						<td>
+						<input id="oldTypes" name="TypesCombo" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Status:</td>
+						<td>
+						<input id="oldStatus" name="StatusCombo" value="">
+						</td>
+					</tr>
+					<tr class="superior">
+						<td>Template:</td>
+						<td>
+						<input id="oldTempl" name="TemplCombo" value="">
+						</td>
+					</tr>
+					<!-- <tr class="superior">
+					<td>资产组:</td>
+					<td><input id="oldGroup" name="GroupCombo" value=""></td>
+					</tr> -->
+					<tr>
+						<td>Description:</td>
+						<td><textarea id="oldDesc" class="winTextarea"></textarea>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false" >
+				<a id="projectGroupUpdateOk" href="#">OK</a>
+				<a id="projectGroupUpdateCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+	<!---------------------- 图片上传窗口 ---------------------->
+	<div id="groupImgWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">
+				<table>
+					<tr class="subordinate">
+						<input type="file" name="groupImage" id="groupImage">
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false" >
+				<a id="groupImgOk" href="#">OK</a>
+				<a id="groupImgCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<!---------------------- 添加资产组窗口 ---------------------->
+	<div id="groupAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate">  
+	            		<td>Parent:</td>
+	            		<td><input id="newParentGroup" name="newParentGroup" value=""></td>
+	        		</tr>
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newGroupName" class="NameInput" name="" value=""></input></td>   
+	        		</tr>
+	        		<!--
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="newGroupDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        		-->
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="groupAddOk" href="#">OK</a> 
+				<a id="groupAddCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<!---------------------- 修改资产组窗口 ---------------------->
+	<div id="groupUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>
+					<tr class="subordinate">  
+	            		<td>Parent:</td>
+	            		<td><input id="oldParentGroup" name="newParentGroup" value=""></td>
+	        		</tr>
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldGroupName" class="groupName" name="" value=""></td>   
+	        		</tr>
+	        		<!--
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="oldGroupDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        		-->
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="groupUpdateOk" href="#">OK</a> 
+				<a id="groupUpdateCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectGroup.js"></script>
+
+{% endblock %}

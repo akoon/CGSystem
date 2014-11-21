@@ -1,0 +1,62 @@
+<style>
+	.project-bar {
+		position: absolute;
+		/*width: 12%;*/
+		height: 100%;
+		background-color: #cae8fb;
+		border-right:1px solid #bad0df;
+		font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑","STHeiti","MingLiu"
+		/*background: url('/static/BaseSys/img/bg_main.png')*/
+	}
+	.project-nav
+	{
+		width: 100%;
+	}
+	.project-nav ul{
+		text-align: left;
+		list-style-type: none;
+		margin: 0px;
+		
+	}
+	.project-nav li { 
+		padding: 13px;
+		padding-left: 20px;
+		border-bottom:1px solid #bad0df;
+		/*margin-left: 10px;*/
+	}
+	
+	.project-nav li a{
+		color: #465d6f;
+	}
+	
+	.project-nav .active a{
+		color: #0088CC;
+	}
+
+
+</style>
+
+<!-- <a id="brand"  href="" style="display:none">{{request.session.projectName}}</a> -->
+
+
+<div class="project-bar"  style="position:fixed;top:40px;left:0px;right:0px;z-index:1020;">
+    <div class="project-nav" style="float:left">
+        <ul>
+      		<li id="statusLnk">
+            	<a href="/ProjectManSys/status"><img src="/static/ProjectManSys/img/status.png" />&nbsp;&nbsp;&nbsp;&nbsp;Status</a>
+            </li>        
+            <li id="typesLnk">
+            	<a href="/ProjectManSys/types"><img src="/static/ProjectManSys/img/types.png" />&nbsp;&nbsp;&nbsp;&nbsp;Type</a>
+            </li>
+            <li id="templLnk">
+            	<a href="/ProjectManSys/templ"><img src="/static/ProjectManSys/img/templ.png" />&nbsp;&nbsp;&nbsp;&nbsp;Template</a>
+            </li>
+            <!-- <li id="groupLnk">
+            	<a href="/ProjectManSys/group"><img src="/static/ProjectManSys/img/asset.png" />&nbsp;&nbsp;&nbsp;&nbsp;Task Group</a>
+            </li> -->
+        </ul>                   
+    </div>
+		
+</div>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectBar.js"></script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pillars</title>
+<link rel="stylesheet" href="/static/Initialization/css/install.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/buttons.css?ver=3.7" type="text/css" />
+<link rel="stylesheet" href="/static/Initialization/css/main.css" type="text/css" />
+<script src="/static/extraneous/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/Initialization/js/initialization.js"></script>
+</head>
+<body class="wp-core-ui">
+<h1 id="logo"><a href="http://pillars.cc/">Pillars</a></h1>
+<p>所有的配置信息如下：</p>
+
+<section>
+	<div class="page-header">
+		<h1>Pillars ID 验证信息 <small> Pillars ID 作为系统登录使用</small></h1>
+    </div>
+    <ul>
+    	<li>Pillars ID : {{pillars.pillars_id}}</li>
+    	<li>密码 : {{pillars.pillars_pwd}}</li>
+   </ul>
+</section>
+<section>
+	<div class="page-header">
+		<h1>语言与时区设置信息 <small></small></h1>
+    </div>
+    <ul>
+    	<li>语言 : {{globals.language}}</li>
+    	<li>时区 : {{globals.timezone}}</li>
+   </ul>
+</section>
+<section>
+	<div class="page-header">
+		<h1>邮箱设置信息 <small>{{email.is_skip}}</small></h1>
+    </div>
+    <ul>
+    	<li>服务器 : {{email.email_host}}</li>
+    	<li>端口 : {{email.email_port}}</li>
+    	<li>用户名 : {{email.email_host_user}}</li>
+    	<li>密码 : {{email.email_host_password}}</li>
+    	<li>TLS : {{email.email_use_tls}}</li>
+   </ul>
+</section>
+<section>
+	<div class="page-header">
+		<h1>APP信息 <small></small></h1>
+    </div>
+    <ul>
+    	<li>基础管理子系统 : {{myapps.basesys}}</li>
+    	<li>考勤管理子系统 : {{myapps.timesheetsys}}</li>
+    	<li>项目管理子系统 : {{myapps.projectmansys}}</li>
+    	<li>渲染管理子系统 : {{myapps.rendermansys}}</li>
+    	<li>日历管理子系统 : {{myapps.calendersys}}</li>
+   </ul>
+</section>
+<form method="post" action="">
+	<p class="step"><input name="submit" type="submit" value="开始使用" class="button button-large" /></p>
+</form>  
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectRel.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+
+<style>
+	#groupTree li div {
+		margin-left: 15px;
+		border-bottom: 1px solid #e7e7e7;
+		box-shadow: 0px 1px 0px #fff;
+		height: 35px;
+	}
+	
+	#groupTree .tree-title {
+		display: inline-block;
+		font-size: 15px;
+		height: 35px;
+		line-height: 35px;
+		padding: 0 2px;
+		text-decoration: none;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+	#groupTree .tree-expanded {
+		margin-top: 10px;
+	}
+	#groupTree .tree-collapsed {
+		margin-top: 10px;
+	}
+</style>
+
+<!--
+<div class="top-toolbar">
+<a href="#" id="RelTaskGroupAdd">添加</a>
+<a href="#" id="RelTaskGroupDelete">删除</a>
+</div> -->
+
+<div class="project-content" style="width:90%">
+	<div class="project project_top_button">
+		
+		<div style="width: 265px;float: left;border-right: 1px solid #CCCCCC;height: 46px;">&nbsp;</div>
+		{% if has_op %}
+		<a href="#" id="RelTaskGroupAdd" title="添加"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="RelTaskGroupDelete" title="删除"><img src="/static/ProjectManSys/img/del.png" /></a>
+		{% endif %}
+		<!--<h2 class="baseTitle">资产关联</h2>-->
+	</div>
+	<div class="assets-sider-bar">
+		<div style='color:#465D6F;height: 25px;border-bottom:1px solid #CCCCCC;text-align: center;font-family: "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑","STHeiti","MingLiu";'>
+			资产
+		</div>
+		<ul id="groupTree"></ul>
+	</div>
+	<div id="RelTaskGroupTb">
+		<!--<a href="#" id="RelTaskGroupAdd" class="easyui-linkbutton" iconCls="icon-add" plain="true"></a>  -->
+		<!--<a href="#" id="RelTaskGroupDelete" class="easyui-linkbutton" iconCls="icon-remove" plain="true"></a>-->
+	</div>
+	<table id="RelTaskGroup"></table>
+
+	<!---------------------- 添加关联资产窗口 ---------------------->
+	<div id="prelTaskGroupAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					<!--
+					<tr>
+					<td>关联资产:</td>
+					<td><input id="relTaskGroupCombo" name="relTaskGroupCombo" value=""></td>
+					<td>可关联资产:</td>
+					</tr>
+					-->
+					<tr>
+						<td><ul id="relTaskGroupTree"></ul></td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false" >
+				<a id="relTaskGroupAddOk" href="#">确认</a>
+				<a id="relTaskGroupAddCancel" href="#">取消</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

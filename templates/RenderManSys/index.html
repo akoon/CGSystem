@@ -1,0 +1,427 @@
+{% extends "RenderManSys.html" %}
+{% block mainbox %}
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/RenderManSys/css/rendermansys.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryFileTree/jqueryFileTree.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryFileTree/jqueryFileTree.js"></script>
+<script type="text/javascript" src="/static/RenderManSys/js/admintool.js"></script>
+<div class="project">
+	<li class="divider"></li>
+</div>
+<!--操作按钮-->
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!--主任务操作按钮-->
+		<div id="taskstoolbar" class="span8">
+    	        <div class="btn-group">
+    				<a class="btn" href="#addHipTask" data-toggle="modal"><i class="icon-plus"></i> 任务</a>
+    				<a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+    				<ul class="dropdown-menu">
+    					<li><a href="#addHipTask" data-toggle="modal">Add Hip Task</a></li>
+    					<li><a href="#addIfdTask" data-toggle="modal">Add Ifd Task</a></li>
+    					<li><a href="#addNukeTask" data-toggle="modal">Add Nuke Task</a></li>
+    					<li><a href="#addSimulationTask" data-toggle="modal">Add Simulation Task</a></li>
+    				</ul>
+    			</div>
+    		<a class="btn" href="#"><i class="icon-trash"></i> 删除</a>
+			<a class="btn" href="#"><i class="icon-info-sign"></i> 详细信息</a>
+			<a class="btn" href="#"><i class="icon-user"></i> 人工干预</a>
+			<a class="btn" href="#setRenderSvr" data-toggle="modal"><i class="icon-cog"></i> 设置</a>
+			<a class="accordion-toggle btn" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne"><i class="icon-eye-open"></i> 渲染输出</a>
+			<input id="mysearch" type="text" placeholder="Search" data-items="4" data-provide="typeahead" data-animation="true" style="margin: 0 auto;" class="span3">
+		</div>
+    	<!--子任务操作按钮-->
+    	<div id="subtaskstoolbar" class="span4">
+    		<a class="btn" href="#"><i class="icon-repeat"></i> 重新渲染</a>
+    	</div>
+	</div>
+	<ul class="nav nav-list">
+    		<li class="divider"></li>
+	</ul>
+	<div class="tabbable tabs-below">
+		<div class="tab-content">
+			<div id="A" class="tab-pane  active">
+					<div class="row-fluid">
+						<div class="span8">
+							<table id="tasks" title="All Tasks" class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>任务ID</th>
+										<th>Status</th>
+										<th>Owner</th>
+										<th>Submit Username</th>
+										<th>Task Name</th>
+										<th>Render Soft</th>
+										<th>Priority</th>
+										<th>Start Frame</th>
+										<th>End Frame</th>
+										<th>Add Time</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						<div class="span4">
+							<table id="subtasks" class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>子任务ID</th>
+										<th>Status</th>
+										<th>Render Node</th>
+										<th>Start Frame</th>
+										<th>End Frame</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+				</div>
+			</div>
+			<div id="B" class="tab-pane">
+				<!--渲染节点-->
+				<div class="row-fluid">
+					<table id="nodes" title="All Nodes" class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>渲染刀片</th>
+								<th>Status</th>
+								<th>IP address</th>
+								<th>Version</th>
+								<th>Has maya</th>
+								<th>Has houdini</th>
+								<th>Has 3dmax</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#A">任务</a></li>
+			<li class=""><a data-toggle="tab" href="#B">节点</a></li>
+		</ul>
+	</div>
+   	<!--渲染输出信息-->
+   	<div class="row-fluid">
+		<div id="collapseOne" class="accordion-body collapse">
+			<div class="accordion-inner">
+				渲染任务全部成功。
+			</div>
+		</div>
+	</div>
+	<!-- 设置渲染服务器对话框 -->
+	<div class="row-fluid">
+		<div id="setRenderSvr" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">渲染服务器信息</h3>
+			</div>
+			<div class="modal-body">
+				<div class="input-prepend">
+    				<span class="add-on">服务器IP</span>
+    				<input class="input-medium" id="SrvIP" type="text" placeholder="172.16.253.246">
+    			</div>
+    			<div class="input-prepend">
+    				<span class="add-on">服务器端口</span>
+    				<input class="input-small" id="SvrPort" type="text" placeholder="44331">
+    			</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+				<button id="commit-server" class="btn btn-primary">设置</button>
+			</div>
+		</div>
+	</div>
+	<!-- 搜索结果 -->
+	<div class="row-fluid">
+		<div id="selectResult" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">搜索结果：</h3>
+			</div>
+			<div class="modal-body">
+					<table id ="myResult" class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>任务ID</th>
+								<th>Status</th>
+								<th>Owner</th>
+								<th>Submit Username</th>
+								<th>Task Name</th>
+								<th>Render Soft</th>
+								<th>Priority</th>
+								<th>Start Frame</th>
+								<th>End Frame</th>
+								<th>Add Time</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+			</div>
+		</div>
+	</div>
+	<!-- 添加任务对话框hip-->
+	<div class="row-fluid">
+		<div id="addHipTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Add Hip Task</h3>
+			</div>
+			<div class="modal-body">
+			    <div class="well">
+    				<div class="filetree">文件夹选择区</div>
+    			</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Task Name</strong></span>
+					<input class="span6" name="task_name" type="text" placeholder="任务名">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Name</strong></span>
+					<select class="span6" name="render_name">
+						<option value="houdini project render">houdini project render</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Priority</strong></span>
+					<select class="span3" name="priority">
+						<option value="1">1 highest</option>
+						<option value="2">2 higher</option>
+						<option value="3">3 high</option>
+						<option value="4">4 normal</option>
+						<option value="5">5 low</option>
+						<option value="6">6 lower</option>
+						<option value="7">7 lowest</option>
+					</select>
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>OutFile Type</strong></span>
+					<select class="span3" name="outfile_type">
+						<option value="0">render_exr</option>
+						<option value="1">render_tif</option>
+						<option value="2">render_jpg</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Start Frame</strong></span>
+					<input class="span3" name="start_frame" type="text" placeholder="开始帧">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>End Frame</strong></span>
+					<input class="span3" name="end_frame" type="text" placeholder="结束帧">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>File Name Prefix</strong></span>
+					<input class="span3" name="file_name" type="text" placeholder="文件前缀">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>Render Step</strong></span>
+					<input class="span3" name="render_step" type="text" placeholder="步长">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Node Path</strong></span>
+					<input class="span3" name="render_node_path" type="text" placeholder="渲染节点">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>Group</strong></span>
+					<input class="span3" name="group" type="text" placeholder="刀片数">
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Hip File</strong></span>
+					<input class="span7" name="input_file" type="text" placeholder="Hip文件路径">
+					<button class="btn file_browser" type="button">Browser</button>
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Output Path</strong></span>
+					<input class="span7" name="output_path" type="text" placeholder="输出路径">
+					<button class="btn path_browser" type="button">Browser</button>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+				<button class="btn btn-primary submittask">提交</button>
+			</div>
+		</div>
+	</div>
+	<!-- 添加任务对话框ifd-->
+	<div class="row-fluid">
+		<div id="addIfdTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Add Ifd Task</h3>
+			</div>
+			<div class="modal-body">
+				<div class="well">
+    				<div class="filetree">文件夹选择区</div>
+    			</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Task Name</strong></span>
+					<input class="span6" name="task_name" type="text" placeholder="任务名">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Name</strong></span>
+					<select class="span6" name="render_name">
+						<option value="houdini ifd render">houdini ifd render</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Priority</strong></span>
+					<select class="span3" name="priority">
+						<option value="1">1 highest</option>
+						<option value="2">2 higher</option>
+						<option value="3">3 high</option>
+						<option value="4">4 normal</option>
+						<option value="5">5 low</option>
+						<option value="6">6 lower</option>
+						<option value="7">7 lowest</option>
+					</select>
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>OutFile Type</strong></span>
+					<select class="span3" name="outfile_type">
+						<option value="0">render_exr</option>
+						<option value="1">render_tif</option>
+						<option value="2">render_jpg</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Start Frame</strong></span>
+					<input class="span3" name="start_frame" type="text" placeholder="开始帧">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>End Frame</strong></span>
+					<input class="span3" name="end_frame" type="text" placeholder="结束帧">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Step</strong></span>
+					<input class="span3" name="render_step" type="text" placeholder="步长">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>Group</strong></span>
+					<input class="span3" name="group" type="text" placeholder="刀片数">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Input File Name</strong></span>
+					<input class="span5" name="file_name" type="text" placeholder="文件前缀">
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Input File Path</strong></span>
+					<input class="span7" name="input_file" type="text" placeholder="输入文件路径">
+					<button class="btn file_browser" type="button">Browser</button>
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Output Path</strong></span>
+					<input class="span7" name="output_path" type="text" placeholder="输出路径">
+					<button class="btn path_browser" type="button">Browser</button>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+				<button class="btn btn-primary submittask">提交</button>
+			</div>
+		</div>
+	</div>
+	<!-- 添加任务对话框Nuke-->
+	<div class="row-fluid">
+		<div id="addNukeTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Add Nuke Task</h3>
+			</div>
+			<div class="modal-body">
+				<div class="well">
+    				<div class="filetree">文件夹选择区</div>
+    			</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Task Name</strong></span>
+					<input class="span6" name="task_name" type="text" placeholder="任务名">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Name</strong></span>
+					<select class="span6" name="render_name">
+						<option value="Nuke project render">Nuke project render</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Priority</strong></span>
+					<select class="span3" name="priority">
+						<option value="1">1 highest</option>
+						<option value="2">2 higher</option>
+						<option value="3">3 high</option>
+						<option value="4">4 normal</option>
+						<option value="5">5 low</option>
+						<option value="6">6 lower</option>
+						<option value="7">7 lowest</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Start Frame</strong></span>
+					<input class="span3" name="start_frame" type="text" placeholder="开始帧">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>End Frame</strong></span>
+					<input class="span3" name="end_frame" type="text" placeholder="结束帧">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Step</strong></span>
+					<input class="span3" name="render_step" type="text" placeholder="步长">
+					<span class="add-on" style="margin-left: 10px; border-radius: 4px 0 0 4px;"><strong>Group</strong></span>
+					<input class="span3" name="group" type="text" placeholder="刀片数">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Node Path</strong></span>
+					<input class="span5" name="render_node_path" type="text" placeholder="渲染节点">
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Nuke File</strong></span>
+					<input class="span7" name="input_file" type="text" placeholder="Nuke文件路径">
+					<button class="btn file_browser" type="button">Browser</button>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+				<button class="btn btn-primary submittask">提交</button>
+			</div>
+		</div>
+	</div>
+	<!-- 添加任务对话框Simulation-->
+	<div class="row-fluid">
+		<div id="addSimulationTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Add Simulation Task</h3>
+			</div>
+			<div class="modal-body">
+				<div class="well">
+    				<div class="filetree">文件夹选择区</div>
+    			</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Task Name</strong></span>
+					<input class="span6" name="task_name" type="text" placeholder="任务名">
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Name</strong></span>
+					<select class="span6" name="render_name">
+						<option value="houdini simulation render">houdini simulation render</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Priority</strong></span>
+					<select class="span3" name="priority">
+						<option value="1">1 highest</option>
+						<option value="2">2 higher</option>
+						<option value="3">3 high</option>
+						<option value="4">4 normal</option>
+						<option value="5">5 low</option>
+						<option value="6">6 lower</option>
+						<option value="7">7 lowest</option>
+					</select>
+				</div>
+				<div class="input-prepend">
+					<span class="add-on"><strong>Render Node Path</strong></span>
+					<input class="span5" name="render_node_path" type="text" placeholder="渲染节点">
+				</div>
+				<div class="input-prepend input-append">
+					<span class="add-on"><strong>Input File Name</strong></span>
+					<input class="span7" name="input_file" type="text" placeholder="Hip文件路径">
+					<button class="btn file_browser" type="button">Browser</button>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+				<button class="btn btn-primary submittask">提交</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

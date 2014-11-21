@@ -1,0 +1,112 @@
+/*
+ * By dingchun 
+ * 2013.3.11
+ */
+
+
+.navbar-inverse .navbar-inner{
+	
+}
+
+.container {
+	width: auto!important;
+	margin-right: 20px;
+	margin-left: 20px;
+	min-width: 940px;
+}
+
+body {    
+    background-color: #ccc;
+}
+
+.navbar-inverse .brand {
+	font-weight: bold;
+}
+
+.navbar-fixed-top {
+	position: fixed;
+}
+
+.navbar-innernavbar-inner .brand {
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	margin-left: -20px;
+}
+
+.navbar .nav>li>a {
+	padding: 10px 12px 10px;
+}
+
+.trBgColor {
+	background: blue;
+}
+
+/*Test*/
+.winButton{
+	text-align:right;
+	padding:5px 5px 10px;
+}
+
+.winForm{
+	padding:15px 0px 10px 10px;
+}
+
+.winTextarea{
+	width: 196px;
+	resize: none;
+}
+
+.datagrid-btable span,
+.datagrid-btable div,
+.datagrid-htable span {
+    font-size: 14px;
+}
+
+.baseTitle {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.subordinate {
+    padding-top: 10px;
+    /*line-height: 40px;*/
+}
+
+.panel .messager-body {
+    /*height:18px!important;*/
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+
+.project{
+	padding-top: 45px;
+}
+
+.tabs li {
+    line-height: 0!important;
+}
+
+/*.tabs-p-tool .icon-mini-add {
+    background: url("../../../static/extraneous/bootstrap/img/glyphicons-halflings.png") 373px 86px;
+}*/
+
+.projectImg {
+    width:200px;
+    height:200px;
+    background: #555555;
+}
+
+.projectInformation {
+    
+}
+
+.datagrid-header .datagrid-cell {
+    width: 42px;
+}
+
+.datagrid-cell.datagrid-cell-c1-img {
+    padding-right: 0;
+    padding-left: 0;
+}

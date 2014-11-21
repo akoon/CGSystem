@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+		<script src="/static/extraneous/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/static/extraneous/bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/extraneous/bootstrap/css/bootstrap.min.css" />
+		<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="/static/include/js/last_menu.js"></script>
+
+		<script type="text/javascript">
+			function jsonpCallback(result) {
+				//alert(result);
+				for (var i in result) {
+					alert(i + ":" + result[i]);
+					//循环输出a:1,b:2,etc.
+				}
+			}
+			
+			function callpillarsdrone(flag) {
+				var JSONP = document.createElement("script");
+				JSONP.type = "text/javascript";
+				JSONP.src = "http://127.0.0.1:20003/drone?"+flag;
+				document.getElementsByTagName("head")[0].appendChild(JSONP);
+			}
+			
+			
+			
+		</script>
+
+		<title>Home - Pillars Matrix</title>
+		<style>
+			.mainLayout {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 600px;
+				/*
+				 height: 393px;
+				 margin-left: -190px;
+				 margin-top: -190px;
+				 */
+			}
+			.icon_div {
+				text-align: center;
+				margin: 8px;
+				cursor: pointer;
+				font-size: 16px;
+				color: rgb(255, 255, 255);
+				text-shadow: rgba(0, 0, 0, 0.247059) 0px 7px 15px;
+				font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu";
+			}
+
+			.icon_img {
+				width: 120px;
+				height: 120px;
+			}
+
+		</style>
+
+	</head>
+	<body style="background: url('/static/BaseSys/img/bg_main5.png');">
+		<!-- <img src="/static/BaseSys/img/Pillars_logo.png" style="width: 100px;" /> -->
+		<!-- <span style="color: #FFFFFF">Pillars Cloud</span> -->
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+
+			<!-- <span class="brand"> <img src="/static/BaseSys/img/Pillars_logo.png" style="width: 100px;" /> - 设置 </span> -->
+			<!-- <a class="brand" href="/BaseSys">基础管理子系统</a> -->
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+
+				</ul>
+
+				<ul class="nav pull-right">
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 16px;color:rgba(255,255,255,0.8);background-color: none;">{{user.username}}<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="/ProjectManSys">My Tasks</a>
+							</li>
+							<li>
+								<a href="/logout/">Logout</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" style="padding-top:9px;"><img src="/static/BaseSys/img/help.png" /></a>
+					</li>
+
+					<!--
+					<li>
+					<a href="#">语言</a>
+					</li>
+					<li>
+					<a href="#">帮助</a>
+					</li>
+					<li>
+					<a href="#">关于</a>
+					</li>
+					<li>
+					<a href="#">反馈</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+
+		<!--
+		<div class="row offset11">
+		<div  style="float: right;">
+		{{user.username}}
+		<a href="/logout/">注销</a>
+		</div>
+		</div> -->
+		<!--
+		<div class="mainLayout">
+		aaaaaaaa
+		</div>
+		-->
+		<div style="height: 130px;"></div>
+		<div class="row offset1">
+			<a href="/ProjectManSys" class="span3 icon_div">
+			<div class="icon_div">
+				<img src="/static/BaseSys/img/ProjectManSys_6.png" class="icon_img">
+				<br />
+				Project
+			</div> </a>
+
+			<a href="/TimeSheetSys" class="span3 icon_div">
+			<div class="icon_div">
+				<img src="/static/BaseSys/img/TimeSheetSys_6.png" class="icon_img">
+				<br />
+				Timesheet
+			</div> </a>
+
+			<a href="/CalendarSys" class="span3 icon_div">
+			<div class="icon_div">
+				<img src="/static/BaseSys/img/CalendarSys_6.png" class="icon_img">
+				<br />
+				Calendar
+			</div> </a>
+
+			<a href="/ContactSys" class="span3 icon_div">
+			<div class="icon_div">
+				<img src="/static/BaseSys/img/Other_Contacts_6.png" class="icon_img">
+				<br />
+				Address
+			</div> </a>
+
+			<a href="/BaseSys" class="span3 icon_div">
+			<div class="icon_div">
+				<img src="/static/BaseSys/img/BaseSys_6.png" class="icon_img">
+				<br />
+				Setting
+			</div> </a>
+
+			<!-- <a href="/MaterialManSys" class="span3 icon_div"> -->
+			<a href="javascript::void(0)" class="span3 icon_div" onclick="callpillarsdrone('username=daru.yin&userval=12312k3j1k23k1l23j&flag=app&appname=daily');">
+			<div class="icon_div" style="color:gray;">
+				<img src="/static/BaseSys/img/MaterialManSys_6_d.png" class="icon_img">
+				<br />
+				Material
+			</div> </a>
+
+			<!-- <a href="/RenderManSys" class="span3 icon_div"> -->
+			<a href="javascript::void(0)" class="span3 icon_div" onclick="callpillarsdrone('username=daru.yin&userval=12312k3j1k23k1l23j&flag=application&appname=notepad')">
+			<div class="icon_div" style="color:gray;">
+				<img src="/static/BaseSys/img/RenderManSys_6_d.png" class="icon_img">
+				<br />
+				Render
+			</div> </a>
+
+			<!-- <a href="/AssetSys" class="span3 icon_div"> -->
+			<a href="javascript::void(0)" class="span3 icon_div" onclick="callpillarsdrone('username=daru.yin&userval=12312k3j1k23k1l23j&flag=application&appname=calc')">
+			<div class="icon_div" style="color:gray;">
+				<img src="/static/BaseSys/img/Other_Asset_6_d.png" class="icon_img">
+				<br />
+				Asset
+			</div> </a>
+		</div>
+
+	</body>
+</html>

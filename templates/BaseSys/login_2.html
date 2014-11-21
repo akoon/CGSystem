@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+		<script src="/static/extraneous/jquery/jquery.js"></script>
+		<title>Pillars Matrix</title>
+		<style>
+			.mainLayout {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 393px;
+				height: 393px;
+				margin-left: -190px;
+				margin-top: -190px;
+			}
+
+			#login_input_username {
+				width: 300px;
+				height: 25px;
+				margin-top: 200px;
+				margin-left: 50px;
+				border: none;
+				font-size: large;
+			}
+
+			#login_input_password {
+				width: 265px;
+				height: 25px;
+				margin-top: 18px;
+				margin-left: 50px;
+				border: none;
+				font-size: large;
+			}
+
+			#submit {
+				background: url('');
+				border: none;
+				width: 40px;
+				height: 40px;
+				cursor: pointer;
+			}
+
+			#login_input_remember {
+				margin-left: 135px;
+				margin-top: 30px;
+			}
+
+		</style>
+		<script>
+			$(document).ready(function() {
+				$("#login_input_username").focus();
+			});
+
+		</script>
+	</head>
+	<body style="background: url('/static/BaseSys/img/bkg_login_3.png')">
+		<img src="/static/BaseSys/img/Pillars_logo.png" style="width: 60px;" />
+		<!-- <span style="color: #FFFFFF">Pillars Cloud</span> -->
+
+		<div class="mainLayout" style="background: url('/static/BaseSys/img/login.png')">
+			<form action="" method="post">
+				<input type="text" id="login_input_username" name="login_input_username" placeholder="Username" />
+				<input type="password" id="login_input_password" name="login_input_password" placeholder="Password" />
+				<button type="submit" id="submit"></button>
+				<!-- <input type="checkbox" id="login_input_remember" name="login_input_remember"/> -->
+			</form>
+			<!-- <span id="error_span" style="display: none;">{{ errors }}</span> -->
+		</div>
+	</body>
+</html>

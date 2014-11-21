@@ -1,0 +1,209 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/datagrid-detailview.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="/static/extraneous/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/ProjectManSys/js/projectTaskDl.js"></script>
+
+<script src="/static/extraneous/uploadify/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/uploadify/uploadify.css">
+
+<div class="project-content">
+	<div class="project project_top_button">
+		<input type="hidden" id="has_op" value="{{has_op}}" />
+		{% if has_op %}
+		<a href="javascript:void(0)" id="projectTaskAdd" title="Add"><img src="/static/ProjectManSys/img/add_a.png" /></a>
+		
+		{% endif %}
+		<span id="rowExpand"></span>
+	</div>
+
+	<table id="projectTaskgroup"></table>
+	
+	<!---------------------- 右键菜单 ---------------------->
+	<div id="mm" class="easyui-menu" style="width:120px;">
+		{% if has_op %}
+		<div id="projectTaskEdit" data-options="iconCls:'icon-search'">Edit</div>
+		<div id="projectTaskDelete" data-options="iconCls:'icon-search'">Delete</div>
+		<div id="imageUpload" data-options="iconCls:'icon-search'">Upload</div>
+		{% endif %}
+		<div id="comments" data-options="iconCls:'icon-search'">Comments</div>
+
+	</div>
+	
+	<!---------------------- 添加组窗口 ---------------------->
+	<div id="projectTaskAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<table>
+					<tr class="subordinate">
+						<td>Belongs:</td>
+						<td>
+						<input id="projectTaskCom" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Name:</td>
+						<td>
+						<input id="newName" class="projectTaskName" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Description:</td>
+						<td>						<textarea id="newDesc" class="winTextarea" name="" value=""></textarea></td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="projectTaskAddOk" href="#">Ok</a>
+				<a id="projectTaskAddCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<!---------------------- 修改组窗口 ---------------------->
+	<div id="projectTaskEditWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<input id="oldId" style="display: none"></input>
+				<table>
+					<tr class="subordinate">
+						<td>Belongs:</td>
+						<td>
+						<input id="OldTaskgroupCombo" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Name:</td>
+						<td>
+						<input id="oldName" class="projectTaskName" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Status:</td>
+						<td>
+						<input id="oldStatusCombo" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>User:</td>
+						<td>
+						<input id="oldUserCombo" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Start Time:</td>
+						<td>
+						<input id="oldStartDate"  name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>End Time:</td>
+						<td>
+						<input id="oldEndDate" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Finish Time:</td>
+						<td>
+						<input id="oldFinishDate" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Time Use:</td>
+						<td>
+						<input id="oldSheduleDate" name="" value="">
+						</input></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Description:</td>
+						<td><textarea id="oldDesc" class="winTextarea" name="" value=""></textarea></td>
+					</tr>
+					<tr class="subordinate">
+						<td>Percent:</td>
+						<td>
+						<input id="oldPercentCombo" class="projectTaskCom" name="" value="">
+						</input></td>
+					</tr>
+				</table>
+			</div>
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="projectTaskEditOk" href="#">Ok</a>
+				<a id="projectTaskEditCancel" href="#">Cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<!---------------------- 任务发布窗口 ---------------------->
+	<div id="projectTaskIssueWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<span style="display: none" id="issueTaskSelected"></span>
+				
+				<form>
+					<div id="queue"></div>
+					<input id="file_upload" name="file_upload" type="file" multiple="true">
+				</form>
+				<script type="text/javascript">
+					
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div id="taskReview" class="task-review" style = "display: none">
+		<input id="taskId" type="hidden" value="">
+		</input>
+		<div class="content">
+			<div id="chatCloseButton" onClick="chatWindowClose()" class="close-button">
+				X
+			</div>
+			<div class="chat-body">
+				<ul class="chat-line"></ul>
+			</div>
+
+			<div class="left-messages">
+				<div class="reply-button">
+					Reply
+				</div>
+				<textarea id="note-content" name="note-content" value="" style="width:100%"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<div id="imageUploadWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'">
+				<input id="imageUploadId" style="display: none"></input>
+				<table>
+					<tr class="subordinate">
+						<td>File:</td>
+						<td>
+						<input type="file" name="mytaskImage" id="mytaskImage"> 
+						</input></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="winButton" data-options="region:'south',border:false">
+				<a id="imageUploadWinOk" href="#">Upload</a>
+				<a id="imageUploadWinCancel" href="#">Cancel</a>
+			</div>
+
+		</div>
+		
+
+	</div>
+
+</div>
+{% endblock %}

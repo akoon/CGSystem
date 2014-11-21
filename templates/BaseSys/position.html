@@ -1,0 +1,74 @@
+{% extends "BaseSys.html" %}
+{% block mainbox %}
+
+{% include "BaseSys/settingsSideBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<script type="text/javascript" src="/static/BaseSys/js/position.js"></script>
+
+<div class="project project-content">
+	
+	<div class="project_top_button">
+		<a href="#" id="positionAdd" title="Add"><img src="/static/ProjectManSys/img/add.png" /></a>
+		<a href="#" id="positionDelete" title="Delete"><img src="/static/ProjectManSys/img/del.png" /></a>
+		<a href="#" id="positionUpdate" title="Edit"><img src="/static/ProjectManSys/img/edit.png" /></a>
+		
+	</div>
+	
+	<table id="position"></table>
+	
+	<!---------------------- 添加职位窗口 ---------------------->
+	<div id="positionAddWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="newName" class="positionName" name="" value=""></input></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="newDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="positionAddOk" href="#">OK</a> 
+				<a id="positionAddCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+	
+	<!---------------------- 修改职位窗口 ---------------------->
+	<div id="positionUpdateWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div  class="winForm" data-options="region:'center'"> 
+				<table>  
+					<tr class="subordinate"> 
+	        			<td>Name:</td>  
+	        			<td><input id="oldName" class="positionName" name="" value=""></td>   
+	        		</tr>
+	        		<tr class="subordinate"> 
+	        			<td>Description:</td>  
+	        			<td><textarea id="oldDesc" class="winTextarea" name="" value=""></textarea></td>   
+	        		</tr>
+	        	</table>       
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >  
+				<a id="positionUpdateOk" href="#">OK</a> 
+				<a id="positionUpdateCancel" href="#">Cancel</a> 
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+{% endblock %}

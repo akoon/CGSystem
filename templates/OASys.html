@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>OA - Pillars Matrix</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- CSS styles -->
+		<link href="/static/extraneous/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/static/main_all.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/main.css"/>
+
+		<!-- JS styles -->
+		<script src="/static/extraneous/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/static/extraneous/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/ProjectManSys/js/public.js"></script>
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- Navbar================================================== -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+
+							{% include 'include/first_menu.html' %}
+							<li ><a id="project-name"></a></li>
+							<li id="projectManSysLnk" class="">
+								<a href="/OASys/">首页</a>
+							</li>
+							<li id="projectManSysLnk" class="">
+								<a id="leaveSyslnk" href="/OASys/">请假</a>
+							</li>
+							<li id="projectManSysLnk" class="">
+								<a id="projectSettingsLnk" href="/OASys/settings/">设置</a>
+							</li>
+						</ul>
+
+						{% include 'include/last_menu.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			{% block mainbox %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectIndex.css"/>
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<script type="text/javascript" src="/static/ProjectManSys/js/projectIndex.js"></script>
+
+<div class="project-content">
+	<div class="project">
+	</div>
+	<div class="base-div overview">
+	    <div id="projecImg"  class="overview-img"><span id="task-name" class="project-name">{{name}}</span>
+	    	{% if thum %}
+	    		<img src="{{thum}}" />
+	    	{% else %}
+	    		<img src="/static/pillars/img/unload.jpg" />
+	    	{% endif %}
+	    </div>
+	    <div>
+	        <span class="info">Leader<span id="leader" class="write-in">{{username}}</span></span>
+	        <span class="info">Status<span id="state" class="write-in">{{status}}</span></span>
+	    </div>
+	    
+	    <div>
+	        <span class="info">Start<span id="start-time" class="write-in">{{start_time}}</span></span>
+	        <span class="info">End<span id="end-time" class="write-in">{{end_time}}</span></span>
+	    </div>
+	    <div>
+	        <div class="info description">Description<span id="description" class="write-in">{{desc}}</span></div>
+	    </div>
+	</div>
+	
+	<div class="base-div project-summary" >
+		<span class="info">Tasks<span id="proj-taskcount" class="write-in"></span></span>
+		<span class="info">WIP<span id="proj-wipcount" class="write-in"></span></span>
+		<span class="info">Published<span id="proj-publish-count" class="write-in"></span></span>
+		<span class="info">Submitted<span id="proj-submit-count" class="write-in"></span></span>
+		<span class="info">Approved<span id="proj-passed-count" class="write-in"></span></span>
+		<span class="info">QC<span id="proj-qc-count" class="write-in"></span></span>
+	</div>
+	
+	<div id="project-userinfo" class="base-div">
+		<div class='table-div'>
+			<table id="projectUserTable"></table>
+		</div>
+	<div>
+	<div class="user-summary" >
+		<span class="info">Tasks<span id="user-taskcount" class="write-in"></span></span>
+		<span class="info">WIP<span id="user-wipcount" class="write-in"></span></span>
+		<span class="info">Published<span id="user-publish-count" class="write-in"></span></span>
+		<span class="info">Submitted<span id="user-submit-count" class="write-in"></span></span>
+		<span class="info">Approved<span id="user-passed-count" class="write-in"></span></span>
+		<span class="info">QC<span id="user-qc-count" class="write-in"></span></span>
+	</div>
+	
+	<!---------------------- 图片上传窗口 ---------------------->
+	<div id="projectImgWin">
+		<div class="easyui-layout" data-options="fit:true">
+			<div class="winForm" data-options="region:'center'">  
+	        	<table>  
+					<tr class="subordinate"> 
+	    					<input type="file" name="projectImage" id="projectImage">  
+	        		</tr>
+	        	</table>           
+	        </div> 
+			<div class="winButton" data-options="region:'south',border:false" >   			 
+				<a id="projectImgOk" href="#">OK</a> 
+				<a id="projectImgCancel" href="#">Cancel</a> 
+			</div>
+		</div>	
+	</div>
+</div>
+{% endblock %}

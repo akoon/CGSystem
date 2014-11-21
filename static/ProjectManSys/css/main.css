@@ -1,0 +1,122 @@
+/****************************************
+ * By    Aaron
+ * Date  2013.3.11
+ * Time  10:00
+ ****************************************/
+
+.navbar-inverse .navbar-inner {
+
+}
+
+.navbar {
+	/*box-shadow: 0 4px 6px rgba(0,0,0,0.2);*/
+}
+
+.navbar-inverse .brand {
+	font-weight: bold;
+}
+
+.navbar-fixed-top {
+	position: fixed;
+}
+
+.navbar-innernavbar-inner .brand {
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	margin-left: -20px;
+}
+
+.navbar .nav > li > a {
+	padding: 10px 12px 10px;
+}
+
+#content .icon-add, #content .icon-remove, #content .icon-refresh {
+	height: 16px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	display: inline-block;
+}
+
+.trBgColor {
+	background: blue;
+}
+
+/*Test*/
+.winButton {
+	text-align: right;
+	padding: 5px 5px 10px;
+}
+
+.winForm {
+	padding: 15px 0px 10px 10px;
+}
+
+.winTextarea {
+	width: 196px;
+	resize: none;
+}
+
+.datagrid-btable span, .datagrid-btable div, .datagrid-htable span {
+	font-size: 14px;
+}
+
+.subordinate {
+	padding-top: 10px;
+	/*line-height: 40px;*/
+}
+
+.panel .messager-body {
+	/*height:18px!important;*/
+	font-size: 14px;
+	text-align: center;
+	padding: 5px;
+}
+
+.project {
+	padding-top: 30px;
+}
+
+#content .navbar+ .project {
+	padding-top: 72px;
+}
+
+.tabs li {
+	line-height: 0 !important;
+}
+
+/*.tabs-p-tool .icon-mini-add {
+ background: url("../../../static/extraneous/bootstrap/img/glyphicons-halflings.png") 373px 86px;
+ }*/
+
+.projectImg {
+	width: 200px;
+	height: 200px;
+	background: #555555;
+}
+
+.projectInformation {
+
+}
+
+.datagrid-header .datagrid-cell {
+	width: 42px;
+}
+
+.datagrid-btable .datagrid-cell-c1-img {
+	width: 50px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.group-inner {
+	display: none;
+}
+
+.project-highlight {
+	display: block;
+	width: 100%;
+	background: #ccc;
+}

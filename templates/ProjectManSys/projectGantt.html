@@ -1,0 +1,43 @@
+{% extends "ProjectManSys.html" %}
+{% block mainbox %}
+
+{% include "ProjectManSys/projectBar.html" %}
+
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/extraneous/ajaxfileupload/ajaxfileupload.js"></script>
+<script type="text/javascript" src="/static/ProjectManSys/js/projectGantt.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/ProjectManSys/css/projectCommon.css"/>
+
+<div class="project-content">
+	<div class="project">
+		<!--<h2 class="baseTitle">甘特图</h2>-->
+	</div>
+	
+	<div style="text-align:center">
+		<iframe id="gnt_frame" frameborder="no" border="0" src="/ProjectManSys/gantt/{{proj}}">
+		</iframe>
+	</div>
+	
+	<script type="text/javascript">
+		sidebarWidth = 157;
+		$(".project-bar").width(sidebarWidth);
+		
+		$("#gnt_frame").width($(window).width() - sidebarWidth);
+		$("#gnt_frame").height($(window).height() - 40);
+		
+		// 动态改变表格大小
+		$(window).resize(function(){
+			//	console.log($(window).height() + ' , ' + $(window).width());
+		
+			$("#gnt_frame").width($(window).width() - sidebarWidth);
+			$("#gnt_frame").height($(window).height() - 40);
+		
+		});
+	</script>
+</div>
+
+{% endblock %}

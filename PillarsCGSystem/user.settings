@@ -1,0 +1,29 @@
+[pillars]
+pillars_id = pillars
+pillars_pwd = 123123
+serialnumber = 
+mac_address = 18a905b9df9f
+
+[initialization]
+initialization = YES
+setup = finish
+
+[global]
+language = zh-cn
+timezone = beijing
+
+[apps]
+basesys = True
+timesheetsys = True
+projectmansys = True
+rendermansys = False
+calendersys = True
+
+[email]
+email_host_password = 
+email_use_tls = 
+email_port = 
+email_host_user = 
+email_host = 
+is_skip = True
+

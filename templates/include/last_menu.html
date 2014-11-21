@@ -1,0 +1,100 @@
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/bootstrap/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/extraneous/jqueryeasyui/themes/icon.css"/>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/extraneous/jqueryeasyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/include/js/last_menu.js"></script>
+
+<ul class="nav pull-right">
+	<li class="dropdown">
+		<a href="" class="dropdown-toggle" data-toggle="dropdown">{{user.username}}<b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="/ProjectManSys">My Tasks</a>
+			</li>
+			<li>
+				<a href="#" onclick="$('#changepasswd').dialog('open')">Change Password</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="/logout/">Log out</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="#" style="padding-top:9px;"  class="dropdown-toggle" data-toggle="dropdown"><img src="/static/ProjectManSys/img/help_a.png" /></a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="javascript:void(0)" id="reportAdd">Submit Feedbacks</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" id="myReport">My Feedbacks</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="javascript:void(0)">Help</a>
+			</li>
+		</ul>
+	</li>
+	
+	<!-- 
+	<li>
+		<a href="#">语言</a>
+	</li>
+	<li>
+		<a href="#">帮助</a>
+	</li>
+	<li>
+		<a href="#">关于</a>
+	</li>
+	<li>
+		<a href="#">反馈</a>
+	</li> -->
+</ul>
+<div style="display:none;">
+	<div id="changepasswd" class="easyui-dialog" title="Change Password" style="width:350px;height:230px;padding:10px;">
+		<form id="ff" method="post">
+			<table>
+				<tr>
+					<td>Old Password:</td>
+					<td><input id="oldpasswd" autocomplete="off" class="easyui-validatebox" type="password" name="oldpasswd" data-options="required:true"></input></td>
+				</tr>
+				<tr>
+					<td>New Password:</td>
+					<td><input id="newpasswd" autocomplete="off" class="easyui-validatebox" type="password" name="newpasswd" data-options="required:true"></input></td>
+				</tr>
+				<tr>
+					<td>Retype New Password:</td>
+					<td><input id="renewpasswd" autocomplete="off" class="easyui-validatebox" type="password" name="renewpasswd" required="required" validType="equals['#newpasswd']"></input></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	<!---------------------- 发布反馈窗口 ---------------------->
+	<div id="reportAddWin">
+		<div  class="winForm" data-options="region:'center'">
+			反馈内容:<br />
+			<textarea id="reportContent" class="winTextarea" name="" value=""></textarea>
+			
+		</div>
+		<div class="winButton" data-options="region:'south',border:false">
+			<a id="reportAddOk" href="#">确认</a>
+			<a id="reportAddCancel" href="#">取消</a>
+		</div>
+	</div>
+	
+	<!---------------------- 我的反馈窗口 ---------------------->
+	<div id="myReportWin">
+		<div  class="winForm" data-options="region:'center'">
+			<table id="myReportTable"></table>
+		</div>
+		<div class="winButton" data-options="region:'south',border:false">
+			<a id="myReportClose" href="#">关闭</a>
+		</div>
+	</div>
+	
+</div>
+
+
+
+	
